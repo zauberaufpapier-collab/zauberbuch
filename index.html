@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zauber auf Papier | Malbücher & Gratis Ebooks für Kinder</title>
+    <meta
+      name="description"
+      content="Liebevoll gestaltete Malbücher, Gratis-Ebooks und kreative Ausmalwelten für Kinder."
+    />
+    <meta name="author" content="Nicole Feller" />
+    <meta name="publisher" content="Nicole Feller" />
+    <meta name="copyright" content="© 2026 Nicole Feller. Alle Rechte vorbehalten." />
+    <meta property="og:site_name" content="Zauber auf Papier" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background: #fffaf7;
+        --surface: #ffffff;
+        --surface-soft: #fff1f4;
+        --primary: #d94d68;
+        --primary-dark: #b93451;
+        --accent: #f7b8c6;
+        --mint: #b8ded2;
+        --lavender: #d9c8f2;
+        --text: #3d2f32;
+        --muted: #7e666b;
+        --border: #f2c8d2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(184, 222, 210, 0.34), transparent 28rem),
+          linear-gradient(180deg, rgba(255, 241, 244, 0.42), transparent 36rem),
+          var(--background);
+        color: var(--text);
+        font-family: "Nunito", system-ui, sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a,
+      button {
+        transition:
+          background-color 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease,
+          color 180ms ease,
+          transform 180ms ease;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 650;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .container {
+        width: min(100% - 2rem, 1120px);
+        margin-inline: auto;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid var(--border);
+        background: rgba(255, 250, 247, 0.94);
+        backdrop-filter: blur(18px);
+      }
+
+      .header-inner {
+        display: flex;
+        min-height: 80px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.22rem;
+        font-weight: 650;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface-soft);
+        color: var(--primary);
+        box-shadow: 0 6px 18px rgba(185, 52, 81, 0.08);
+      }
+
+      .nav,
+      .social {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .nav a {
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 900;
+      }
+
+      .nav a:hover {
+        color: var(--primary);
+      }
+
+      .social {
+        gap: 8px;
+      }
+
+      .social a {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--primary);
+        font-size: 0.78rem;
+        font-weight: 900;
+        box-shadow: 0 6px 18px rgba(185, 52, 81, 0.08);
+      }
+
+      .social a:hover,
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero {
+        overflow: hidden;
+        padding: 44px 0 64px;
+      }
+
+      .hero-grid {
+        display: grid;
+        align-items: center;
+        gap: 44px;
+        grid-template-columns: 1.02fr 0.98fr;
+      }
+
+      .eyebrow,
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--primary);
+        font-size: 0.92rem;
+        font-weight: 900;
+        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+      }
+
+      .eyebrow {
+        margin-bottom: 20px;
+        padding: 10px 16px;
+      }
+
+      .hero h1 {
+        max-width: 760px;
+        font-size: clamp(2.45rem, 5vw, 4.75rem);
+        line-height: 1.06;
+      }
+
+      .hero-copy {
+        max-width: 610px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 1.15rem;
+        line-height: 1.75;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 54px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 14px 26px;
+        background: var(--primary);
+        color: white;
+        font-size: 1rem;
+        font-weight: 900;
+        box-shadow: 0 18px 55px rgba(185, 52, 81, 0.15);
+      }
+
+      .button:hover {
+        background: var(--primary-dark);
+        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.2);
+      }
+
+      .button.secondary {
+        border-color: var(--border);
+        background: var(--surface);
+        color: var(--primary);
+        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+      }
+
+      .button.secondary:hover {
+        border-color: var(--accent);
+        background: var(--surface);
+      }
+
+      .hero-image-wrap {
+        position: relative;
+        max-width: 520px;
+        margin-inline: auto;
+      }
+
+      .hero-image-card {
+        border: 1px solid var(--border);
+        border-radius: 36px;
+        background: var(--surface);
+        padding: 16px;
+        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.18);
+      }
+
+      .hero-image {
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 28px;
+        background: var(--surface-soft);
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .floating-label {
+        position: absolute;
+        right: 28px;
+        top: 4px;
+        z-index: 2;
+        border-radius: 999px;
+        background: var(--surface);
+        padding: 10px 16px;
+        color: var(--primary);
+        font-size: 0.9rem;
+        font-weight: 900;
+        box-shadow: 0 18px 55px rgba(185, 52, 81, 0.15);
+      }
+
+      .benefits {
+        padding-bottom: 72px;
+      }
+
+      .benefit-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: var(--surface);
+        padding: 16px;
+        box-shadow: 0 18px 55px rgba(185, 52, 81, 0.13);
+      }
+
+      .benefit {
+        display: flex;
+        gap: 14px;
+        padding: 12px;
+      }
+
+      .benefit-icon {
+        display: grid;
+        flex: 0 0 auto;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--surface-soft);
+        color: var(--primary);
+        font-weight: 900;
+      }
+
+      .benefit h3 {
+        font-family: "Nunito", system-ui, sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+      }
+
+      .benefit p {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      section {
+        padding: 64px 0;
+        scroll-margin-top: 112px;
+      }
+
+      .section-title {
+        max-width: 760px;
+        margin: 0 auto 42px;
+        text-align: center;
+      }
+
+      .section-title .pill {
+        margin-bottom: 16px;
+        padding: 10px 16px;
+      }
+
+      .section-title h2 {
+        display: inline-flex;
+        border-radius: 999px;
+        background: var(--surface-soft);
+        padding: 12px 24px;
+        font-size: clamp(2rem, 4vw, 2.65rem);
+        line-height: 1.15;
+        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+      }
+
+      .section-title p {
+        max-width: 660px;
+        margin: 20px auto 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.7;
+      }
+
+      .freebie-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .freebie-card,
+      .why-card,
+      .product {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+      }
+
+      .freebie-card {
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        border-radius: 28px;
+      }
+
+      .freebie-card:hover,
+      .product:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.18);
+      }
+
+      .freebie-image {
+        position: relative;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: var(--surface-soft);
+      }
+
+      .freebie-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .badge {
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        border-radius: 999px;
+        background: var(--surface);
+        padding: 7px 12px;
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 900;
+        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+      }
+
+      .freebie-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 24px;
+      }
+
+      .subtitle {
+        color: var(--primary);
+        font-size: 0.92rem;
+        font-weight: 900;
+      }
+
+      .freebie-card h3 {
+        margin-top: 8px;
+        font-size: 1.55rem;
+        line-height: 1.18;
+      }
+
+      .freebie-card p,
+      .product p {
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .teaser-box {
+        margin-top: 16px;
+        border-radius: 18px;
+        background: var(--surface-soft);
+        padding: 12px 14px;
+        color: var(--text);
+        font-size: 0.92rem;
+        font-weight: 800;
+        line-height: 1.55;
+      }
+
+      .freebie-card .button {
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .product-list {
+        display: grid;
+        gap: 32px;
+      }
+
+      .product {
+        overflow: hidden;
+        border-radius: 28px;
+        transition:
+          box-shadow 180ms ease,
+          transform 180ms ease;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product:nth-child(even) .product-media {
+        order: 2;
+      }
+
+      .product-media {
+        background: var(--surface-soft);
+        padding: 20px;
+      }
+
+      .product-image {
+        display: grid;
+        min-height: 440px;
+        place-items: center;
+        overflow: hidden;
+        border-radius: 24px;
+        background: var(--background);
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .product-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 44px;
+      }
+
+      .mini-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .mini-cover {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--surface-soft);
+        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+      }
+
+      .mini-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .mini-badge {
+        display: inline-flex;
+        border-radius: 999px;
+        background: var(--mint);
+        padding: 7px 12px;
+        color: var(--text);
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+
+      .product h3 {
+        margin-top: 24px;
+        font-size: clamp(2rem, 4vw, 2.65rem);
+        line-height: 1.12;
+      }
+
+      .product-desc {
+        margin-top: 16px;
+        font-size: 1.08rem;
+      }
+
+      .product-teaser {
+        margin-top: 24px;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        background: var(--surface-soft);
+        padding: 12px;
+      }
+
+      .product-teaser-grid {
+        display: grid;
+        align-items: center;
+        gap: 16px;
+        grid-template-columns: 128px 1fr;
+      }
+
+      .teaser-image {
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 16px;
+        background: var(--surface);
+      }
+
+      .teaser-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .teaser-label {
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .product-teaser p {
+        margin-top: 6px;
+        color: var(--text);
+        font-weight: 800;
+      }
+
+      .highlight-list {
+        display: grid;
+        gap: 12px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .highlight-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 900;
+      }
+
+      .check {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--surface-soft);
+        color: var(--primary);
+      }
+
+      .why-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 40px;
+      }
+
+      .magic-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .why-card {
+        border-radius: 28px;
+        padding: 28px;
+        scroll-margin-top: 112px;
+      }
+
+      .why-card h3 {
+        margin-top: 16px;
+        font-size: 1.55rem;
+      }
+
+      .why-card p {
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .newsletter {
+        padding: 64px 0 80px;
+      }
+
+      .newsletter-box {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.18);
+      }
+
+      .newsletter-grid {
+        display: grid;
+        align-items: center;
+        gap: 32px;
+        grid-template-columns: 1fr 0.85fr;
+        padding: 44px;
+      }
+
+      .newsletter h2 {
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        line-height: 1.12;
+      }
+
+      .newsletter p {
+        margin-top: 18px;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 1.08rem;
+        line-height: 1.7;
+      }
+
+      .newsletter-form {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 1fr auto;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.13);
+        padding: 12px;
+      }
+
+      .newsletter-form input {
+        min-height: 54px;
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        border-radius: 999px;
+        padding: 0 20px;
+        color: var(--text);
+        font: inherit;
+        font-weight: 800;
+      }
+
+      .newsletter-form button {
+        min-height: 54px;
+        border: 0;
+        border-radius: 999px;
+        background: var(--text);
+        color: white;
+        padding: 0 26px;
+        font: inherit;
+        font-weight: 900;
+      }
+
+      .newsletter a {
+        color: white;
+        font-weight: 900;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+
+      .popup-fallback {
+        width: min(92vw, 460px);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: var(--surface);
+        color: var(--text);
+        padding: 28px;
+        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.24);
+      }
+
+      .popup-fallback::backdrop {
+        background: rgba(61, 47, 50, 0.28);
+        backdrop-filter: blur(8px);
+      }
+
+      .popup-fallback h2 {
+        font-size: 1.7rem;
+      }
+
+      .popup-fallback p {
+        margin-top: 12px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .popup-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .popup-actions button {
+        min-height: 48px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--primary);
+        padding: 0 20px;
+        font: inherit;
+        font-weight: 900;
+      }
+
+      .footer {
+        border-top: 1px solid var(--border);
+        background: var(--surface-soft);
+      }
+
+      .footer-grid {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: 1.2fr 0.8fr 0.8fr;
+        padding: 48px 0;
+      }
+
+      .footer h2 {
+        font-size: 2rem;
+      }
+
+      .footer p {
+        max-width: 420px;
+        margin-top: 14px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .footer h3 {
+        font-family: "Nunito", system-ui, sans-serif;
+        color: var(--primary);
+        font-size: 0.86rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .footer-links {
+        display: grid;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .footer-links a {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .legal-card {
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: var(--surface);
+        padding: clamp(24px, 4vw, 42px);
+        box-shadow: 0 18px 55px rgba(185, 52, 81, 0.13);
+      }
+
+      .legal-card h2 {
+        font-size: clamp(2rem, 4vw, 2.6rem);
+      }
+
+      .legal-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 0.9fr 1.1fr;
+        margin-top: 24px;
+      }
+
+      .legal-card h3 {
+        margin-top: 4px;
+        font-family: "Nunito", system-ui, sans-serif;
+        color: var(--primary);
+        font-size: 0.9rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .legal-card p,
+      .legal-card address {
+        margin-top: 10px;
+        color: var(--muted);
+        font-style: normal;
+        line-height: 1.7;
+      }
+
+      .legal-card a {
+        color: var(--primary);
+        font-weight: 900;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+
+      .copyright {
+        border-top: 1px solid var(--border);
+        padding: 20px 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 800;
+      }
+
+      @media (max-width: 980px) {
+        .header-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 16px 0;
+        }
+
+        .nav,
+        .social {
+          flex-wrap: wrap;
+        }
+
+        .hero-grid,
+        .product-grid,
+        .newsletter-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .product:nth-child(even) .product-media {
+          order: 0;
+        }
+
+        .benefit-grid,
+        .freebie-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .legal-grid,
+        .why-grid,
+        .magic-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: min(100% - 1.25rem, 1120px);
+        }
+
+        .brand {
+          font-size: 1.05rem;
+        }
+
+        .nav {
+          gap: 12px;
+        }
+
+        .hero {
+          padding-top: 32px;
+        }
+
+        .button-row,
+        .button {
+          width: 100%;
+        }
+
+        .benefit-grid,
+        .freebie-grid,
+        .product-teaser-grid,
+        .newsletter-form {
+          grid-template-columns: 1fr;
+        }
+
+        .product-content,
+        .newsletter-grid {
+          padding: 26px;
+        }
+
+        .product-image {
+          min-height: 320px;
+        }
+
+        .section-title h2 {
+          border-radius: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="#startseite" aria-label="Zauber auf Papier Startseite">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>Zauber auf Papier</span>
+        </a>
+        <nav class="nav" aria-label="Hauptnavigation">
+          <a href="index.html">Startseite</a>
+          <a href="seiten/funkel-downloads.html">Funkel-Downloads</a>
+          <a href="seiten/malbuch-schaetze.html">Malbuch-Schätze</a>
+          <a href="seiten/sternenmalerei.html">Sternenmalerei</a>
+          <a href="seiten/serienzauber.html">Serienzauber</a>
+          <a href="seiten/geschichtenreich.html">Geschichtenreich</a>
+          <a href="seiten/ueber-mich.html">Über mich</a>
+          <a href="seiten/kontakt.html">Kontakt</a>
+        </nav>
+        <div class="social" aria-label="Social Links">
+          <a href="https://www.instagram.com/zauber_auf_papier?igsh=MWM4c21jcXR1cXUzcg==" aria-label="Instagram" data-popup-link>Ig</a>
+          <a href="https://pin.it/42RjLvB2o" aria-label="Pinterest" data-popup-link>Pi</a>
+          <a href="https://www.tiktok.com/@zauberaufpapierx?_r=1&_t=ZG-96r3VpoOtCT" aria-label="TikTok" data-popup-link>Tt</a>
+          <a href="mailto:nickifeller456@gmail.com?subject=Shop%20Anfrage" aria-label="Shop Kontakt">Sh</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="startseite">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Zauber auf Papier: Malbücher & Gratis-Ebooks</p>
+            <h1>Malbücher und Freebies, die kleine Künstlerherzen zum Leuchten bringen</h1>
+            <p class="hero-copy">
+              Entdecke liebevoll gestaltete Bücher, kreative Gratis-Downloads und bunte
+              Ausmalwelten für Kinder.
+            </p>
+            <div class="button-row">
+              <a class="button" href="seiten/funkel-downloads.html">Gratis Ebooks downloaden</a>
+              <a class="button secondary" href="seiten/malbuch-schaetze.html">Malbücher entdecken</a>
+            </div>
+          </div>
+          <div class="hero-image-wrap">
+            <div class="floating-label">Kreativ & bunt</div>
+            <div class="hero-image-card">
+              <div class="hero-image">
+                <img src="images/lina-herzlich.png" alt="Buchmockup Lina Herzlicht von Zauber auf Papier" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="benefits">
+        <div class="container benefit-grid">
+          <article class="benefit">
+            <span class="benefit-icon" aria-hidden="true">✎</span>
+            <div>
+              <h3>Kreativ & bunt</h3>
+              <p>Sanfte Motive, die Kinder direkt zum Ausmalen einladen.</p>
+            </div>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon" aria-hidden="true">✦</span>
+            <div>
+              <h3>Für kleine Künstler</h3>
+              <p>Klare Formen und freundliche Details für viele Altersgruppen.</p>
+            </div>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon" aria-hidden="true">♡</span>
+            <div>
+              <h3>Liebevoll illustriert</h3>
+              <p>Jede Seite ist mit Wärme, Ruhe und Fantasie gestaltet.</p>
+            </div>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon" aria-hidden="true">→</span>
+            <div>
+              <h3>Sofort entdecken</h3>
+              <p>Freebies und Bücher sind klar sortiert und leicht erreichbar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <section id="gratis-ebooks">
+        <div class="container">
+          <div class="section-title">
+            <p class="pill">Kostenlose Downloads</p>
+            <h2>Gratis Ebooks zum Download</h2>
+            <p>Kleine Ausmalwelten zum Herunterladen, Sammeln und direkt Loslegen.</p>
+          </div>
+          <div class="freebie-grid">
+            <article class="freebie-card">
+              <div class="freebie-image">
+                <img src="images/tierische-mandala-freunde-freebie.png" alt="Gratis-Ebook Tierische Mandala Freunde von Zauber auf Papier" />
+                <span class="badge">Gratis E-Book</span>
+              </div>
+              <div class="freebie-body">
+                <p class="subtitle">5 kostenlose Mandalas zum Ausmalen</p>
+                <h3>Tierische Mandala Freunde</h3>
+                <p>Eule, Löwe, Dino, Einhorn und Hase warten als liebevolle Mandalas auf kleine Künstler.</p>
+                <div class="teaser-box">Ein freundliches Gratis-Ebook für ruhige Ausmalmomente ab 4 Jahren.</div>
+                <a class="button" href="https://drive.google.com/file/d/1bsb30Yv7q_eqgRMGPpCMzJwHOrw5ltkA/view?usp=sharing" data-popup-link>Zum Download</a>
+              </div>
+            </article>
+
+            <article class="freebie-card">
+              <div class="freebie-image">
+                <img src="images/wolkenhorn-freebie.png" alt="Gratis-Ebook Wolkenhorn von Zauber auf Papier" />
+                <span class="badge">Gratis E-Book</span>
+              </div>
+              <div class="freebie-body">
+                <p class="subtitle">Süßer Malspaß für kleine Künstler</p>
+                <h3>Wolkenhorn</h3>
+                <p>Ein zartes Einhorn-Freebie mit Wolken, Regenbogen und viel Platz zum Träumen.</p>
+                <div class="teaser-box">Ausmalen, träumen, freuen: perfekt für alle, die Einhörner lieben.</div>
+                <a class="button" href="https://drive.google.com/file/d/1lKpibTy2AkcO2PCDa5Ar9-eTRoL4TR90/view?usp=drive_link" data-popup-link>Zum Download</a>
+              </div>
+            </article>
+
+            <article class="freebie-card">
+              <div class="freebie-image">
+                <img src="images/erdbeerig-schoen-freebie.png" alt="Gratis-Ebook Erdbeerig schön von Zauber auf Papier" />
+                <span class="badge">Gratis E-Book</span>
+              </div>
+              <div class="freebie-body">
+                <p class="subtitle">Süßer Malspaß für kleine Künstler</p>
+                <h3>Erdbeerig schön</h3>
+                <p>Fruchtige Erdbeerwelt mit niedlichen Motiven, einfachen Flächen und einem warmen Look.</p>
+                <div class="teaser-box">Liebevoll, einfach und schnell zum Ausmalen bereit.</div>
+                <a class="button" href="https://drive.google.com/file/d/1T_bBWcawrduaMKJu0Wt-k7ENOAzjWCld/view?usp=sharing" data-popup-link>Zum Download</a>
+              </div>
+            </article>
+
+            <article class="freebie-card">
+              <div class="freebie-image">
+                <img src="images/suesse-leckereien-freebie.png" alt="Gratis-Ebook Süße Leckereien von Zauber auf Papier" />
+                <span class="badge">Gratis E-Book</span>
+              </div>
+              <div class="freebie-body">
+                <p class="subtitle">5 Kawaii Ausmalbilder zum Ausmalen</p>
+                <h3>Süße Leckereien</h3>
+                <p>Donut, Cupcake, Eis, Bonbon und Keks bringen kleine Naschwelten aufs Papier.</p>
+                <div class="teaser-box">Kindgerecht, großflächig und besonders süß gestaltet.</div>
+                <a class="button" href="https://drive.google.com/file/d/14dQmmXiXhI6Png2SZ4A0MigrVie_ZLjj/view?usp=sharing" data-popup-link>Zum Download</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="malbuecher">
+        <div class="container">
+          <div class="section-title">
+            <p class="pill">Zum Verlieben schön</p>
+            <h2>Malbücher & Teaser</h2>
+            <p>Jedes Buch bekommt ein großes Motiv, einen passenden Teaser und darunter den Button Jetzt entdecken.</p>
+          </div>
+
+          <div class="product-list">
+            <article class="product">
+              <div class="product-grid">
+                <div class="product-media">
+                  <div class="product-image">
+                    <img src="images/lina-herzlich.png" alt="Buchcover Lina Herzlicht Malbuch für kreative Mädchen" />
+                  </div>
+                </div>
+                <div class="product-content">
+                  <div class="mini-row">
+                    <div class="mini-cover">
+                      <img src="images/lina-herzlich.png" alt="" />
+                    </div>
+                    <div>
+                      <span class="mini-badge">Malbuch</span>
+                      <p class="subtitle">Malbuch für kreative Mädchen ab 6 Jahren</p>
+                    </div>
+                  </div>
+                  <h3>Lina Herzlicht</h3>
+                  <p class="product-desc">Ein fröhliches Malbuch voller Herz, Fantasie und Magie mit dicken Linien und leicht ausmalbaren Motiven.</p>
+                  <div class="product-teaser">
+                    <div class="product-teaser-grid">
+                      <div class="teaser-image">
+                        <img src="images/rettet-das-herzland.png" alt="Teaserbild Rettet das Herzland zu Lina Herzlicht" />
+                      </div>
+                      <div>
+                        <p class="teaser-label">Teaser</p>
+                        <p>Für Kinder, die märchenhafte Welten, Drachen und liebevolle Details mögen.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="highlight-list">
+                    <li><span class="check">✓</span>Dicke Linien</li>
+                    <li><span class="check">✓</span>Leichtes Ausmalen</li>
+                    <li><span class="check">✓</span>Herz, Fantasie und Magie</li>
+                  </ul>
+                  <a class="button" href="https://www.amazon.de/dp/B0GR19NZCW" data-popup-link>Jetzt entdecken</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product">
+              <div class="product-grid">
+                <div class="product-media">
+                  <div class="product-image">
+                    <img src="images/mara-strubbelkopf.png" alt="Buchcover Mara Strubbelkopf Malbuch" />
+                  </div>
+                </div>
+                <div class="product-content">
+                  <div class="mini-row">
+                    <div class="mini-cover">
+                      <img src="images/mara-strubbelkopf.png" alt="" />
+                    </div>
+                    <div>
+                      <span class="mini-badge">Malbuch</span>
+                      <p class="subtitle">Ein freches Malbuch für kreative Kinder</p>
+                    </div>
+                  </div>
+                  <h3>Mara Strubbelkopf</h3>
+                  <p class="product-desc">Bunte, wilde und charmante Ausmalmotive rund um Mara, ihren Strubbelkopf und kreative kleine Abenteuer.</p>
+                  <div class="product-teaser">
+                    <div class="product-teaser-grid">
+                      <div class="teaser-image">
+                        <img src="images/strubbeltastische-malvorlagen-freebie.png" alt="Teaserbild Strubbeltastische Malvorlagen" />
+                      </div>
+                      <div>
+                        <p class="teaser-label">Teaser</p>
+                        <p>Frech, fröhlich und perfekt für Kinder, die starke Figuren lieben.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="highlight-list">
+                    <li><span class="check">✓</span>Freche Motive</li>
+                    <li><span class="check">✓</span>Kreative Figuren</li>
+                    <li><span class="check">✓</span>Viel Spaß beim Ausmalen</li>
+                  </ul>
+                  <a class="button" href="https://www.amazon.de/dp/B0GJPH45P6" data-popup-link>Jetzt entdecken</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product">
+              <div class="product-grid">
+                <div class="product-media">
+                  <div class="product-image">
+                    <img src="images/wolkenhorn-malbuch-cover.png" alt="Buchcover Wolkenhorn Mein süßes Einhorn-Malbuch" />
+                  </div>
+                </div>
+                <div class="product-content">
+                  <div class="mini-row">
+                    <div class="mini-cover">
+                      <img src="images/wolkenhorn-malbuch-cover.png" alt="" />
+                    </div>
+                    <div>
+                      <span class="mini-badge">Malbuch</span>
+                      <p class="subtitle">Mein süßes Einhorn-Malbuch ab 4 Jahren</p>
+                    </div>
+                  </div>
+                  <h3>Wolkenhorn</h3>
+                  <p class="product-desc">Ein sanftes Einhorn-Malbuch mit niedlichen Motiven, großen Flächen und zauberhaften Ausmalbildern.</p>
+                  <div class="product-teaser">
+                    <div class="product-teaser-grid">
+                      <div class="teaser-image">
+                        <img src="images/wolkenhorn-abenteuer-freebie.png" alt="Teaserbild Wolkenhorn Abenteuer im Wolkenland" />
+                      </div>
+                      <div>
+                        <p class="teaser-label">Teaser</p>
+                        <p>Ausmalen zwischen Wolken, Regenbogen und kleinen Fantasiewelten.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="highlight-list">
+                    <li><span class="check">✓</span>Niedliche Motive</li>
+                    <li><span class="check">✓</span>Große Flächen</li>
+                    <li><span class="check">✓</span>Fördert Kreativität</li>
+                  </ul>
+                  <a class="button" href="https://www.amazon.de/dp/B0FK2P11JZ" data-popup-link>Jetzt entdecken</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product">
+              <div class="product-grid">
+                <div class="product-media">
+                  <div class="product-image">
+                    <img src="images/mein-tier-mandala-malbuch.png" alt="Buchcover Mein Tier Mandala Malbuch" />
+                  </div>
+                </div>
+                <div class="product-content">
+                  <div class="mini-row">
+                    <div class="mini-cover">
+                      <img src="images/mein-tier-mandala-malbuch.png" alt="" />
+                    </div>
+                    <div>
+                      <span class="mini-badge">Mandala</span>
+                      <p class="subtitle">Mit drei spannenden Fakten pro Motiv</p>
+                    </div>
+                  </div>
+                  <h3>Mein Tier Mandala Malbuch</h3>
+                  <p class="product-desc">Tiermandalas treffen auf kleine Wissenshäppchen: malen, staunen und dabei spielerisch schlauer werden.</p>
+                  <div class="product-teaser">
+                    <div class="product-teaser-grid">
+                      <div class="teaser-image">
+                        <img src="images/aha-malen-staunen-teaser.png" alt="Teaserbild Aha, malen, staunen, schlauer werden" />
+                      </div>
+                      <div>
+                        <p class="teaser-label">Teaser</p>
+                        <p>Für kluge Köpfe, die Tiere, Muster und kleine Fakten lieben.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="highlight-list">
+                    <li><span class="check">✓</span>Tiermandalas</li>
+                    <li><span class="check">✓</span>3 Fakten pro Motiv</li>
+                    <li><span class="check">✓</span>Ruhiger Ausmalspaß</li>
+                  </ul>
+                  <a class="button" href="https://www.amazon.de/dp/B0GRZKHFW9" data-popup-link>Jetzt entdecken</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product">
+              <div class="product-grid">
+                <div class="product-media">
+                  <div class="product-image">
+                    <img src="images/erdbeerschoen-teaser.jpg" alt="Teaserbild Erdbeerschön Malbuch" />
+                  </div>
+                </div>
+                <div class="product-content">
+                  <div class="mini-row">
+                    <div class="mini-cover">
+                      <img src="images/erdbeerschoen-teaser.jpg" alt="" />
+                    </div>
+                    <div>
+                      <span class="mini-badge">Malbuch</span>
+                      <p class="subtitle">Traumhaftes Ausmalbuch für Kinder</p>
+                    </div>
+                  </div>
+                  <h3>Erdbeerschön</h3>
+                  <p class="product-desc">Eine süße Beerenwelt mit Erdbeeren, kleinen Figuren und magischen Wesen für gemütliche Ausmalstunden.</p>
+                  <div class="product-teaser">
+                    <div class="product-teaser-grid">
+                      <div class="teaser-image">
+                        <img src="images/erdbeerschoene-malvorlagen-freebie.png" alt="Teaserbild Erdbeerschöne Malvorlagen" />
+                      </div>
+                      <div>
+                        <p class="teaser-label">Teaser</p>
+                        <p>Beeren-Traum wird wahr: perfekt für kleine Hände ab 4 Jahren.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="highlight-list">
+                    <li><span class="check">✓</span>30 Malmotive</li>
+                    <li><span class="check">✓</span>ab 4 Jahren</li>
+                    <li><span class="check">✓</span>Fördert Kreativität und Ruhe</li>
+                  </ul>
+                  <a class="button" href="https://www.amazon.de/dp/B0DJBYRM36" data-popup-link>Jetzt entdecken</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="magische-rubriken">
+        <div class="container">
+          <div class="section-title">
+            <p class="pill">Neue Zauberwelten</p>
+            <h2>Mehr Magie auf Papier</h2>
+            <p>Hier wachsen weitere Rubriken für große Träumerinnen, kleine Lesekinder und ganze Geschichtenwelten.</p>
+          </div>
+          <div class="magic-grid">
+            <article class="why-card" id="erwachsenen-malzauber">
+              <span class="benefit-icon" aria-hidden="true">✧</span>
+              <h3>Sternenmalerei für Erwachsene</h3>
+              <p>Sanfte Motive, ruhige Linien und kleine Auszeiten für alle, die beim Malen wieder durchatmen möchten.</p>
+            </article>
+            <article class="why-card" id="kinderbuch-serien">
+              <span class="benefit-icon" aria-hidden="true">☾</span>
+              <h3>Magische Kinderbuch-Serien</h3>
+              <p>Fortlaufende Reihen mit vertrauten Figuren, zauberhaften Orten und Geschichten, die Kinder gern wiedersehen.</p>
+            </article>
+            <article class="why-card" id="kinderbuecher">
+              <span class="benefit-icon" aria-hidden="true">✦</span>
+              <h3>Geschichten aus dem Kinderbuchreich</h3>
+              <p>Liebevolle Einzelbücher mit Herz, Fantasie und kleinen Abenteuern für gemütliche Vorlesemomente.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="ueber-mich">
+        <div class="container">
+          <div class="section-title">
+            <p class="pill">Warum Kinder Malen lieben</p>
+            <h2>Manchmal braucht es nur ein paar Buntstifte, ein schönes Motiv und einen Moment Ruhe.</h2>
+          </div>
+          <div class="why-grid">
+            <article class="why-card">
+              <span class="benefit-icon" aria-hidden="true">✦</span>
+              <h3>Fördert Kreativität</h3>
+              <p>Kinder wählen Farben, probieren Muster aus und gestalten ihre eigene kleine Welt.</p>
+            </article>
+            <article class="why-card">
+              <span class="benefit-icon" aria-hidden="true">♡</span>
+              <h3>Schenkt Ruhe</h3>
+              <p>Ausmalen kann ein weicher Moment zwischen Alltag, Spiel und Konzentration sein.</p>
+            </article>
+            <article class="why-card">
+              <span class="benefit-icon" aria-hidden="true">✓</span>
+              <h3>Macht stolz</h3>
+              <p>Fertige Bilder zeigen Kindern, was sie mit Geduld und Fantasie schaffen können.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter" id="kontakt">
+        <div class="container">
+          <div class="newsletter-box">
+            <div class="newsletter-grid">
+              <div>
+                <p class="eyebrow" style="background: rgba(255,255,255,0.16); color: white; border-color: transparent;">Bunte Post mit Herz</p>
+                <h2>Hol dir neue Freebies direkt ins Postfach</h2>
+                <p>Erhalte kleine kreative Überraschungen, neue Malbuchseiten und liebevolle Ideen rund ums Ausmalen.</p>
+              </div>
+              <form class="newsletter-form" action="mailto:nickifeller456@gmail.com" method="post" enctype="text/plain">
+                <label style="position:absolute;left:-9999px" for="newsletter-email">E-Mail-Adresse</label>
+                <input id="newsletter-email" type="email" placeholder="deine@email.de" />
+                <button type="submit">Eintragen</button>
+              </form>
+              <p>Kontakt: <a href="mailto:nickifeller456@gmail.com">nickifeller456@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h2>Zauber auf Papier</h2>
+          <p>Liebevoll gestaltete Malbücher, kreative Freebies und kleine Ausmalwelten für Kinder und Familien.</p>
+        </div>
+        <div>
+          <h3>Rechtliches</h3>
+          <div class="footer-links">
+            <a href="seiten/datenschutz.html">Datenschutz</a>
+            <a href="seiten/impressum.html">Impressum</a>
+            <a href="seiten/kontakt.html">Kontakt</a>
+          </div>
+        </div>
+        <div>
+          <h3>Social</h3>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/zauber_auf_papier?igsh=MWM4c21jcXR1cXUzcg==" data-popup-link>Instagram</a>
+            <a href="https://pin.it/42RjLvB2o" data-popup-link>Pinterest</a>
+            <a href="https://www.tiktok.com/@zauberaufpapierx?_r=1&_t=ZG-96r3VpoOtCT" data-popup-link>TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">© 2026 Nicole Feller. Alle Rechte vorbehalten.</div>
+      </div>
+    </footer>
+    <dialog class="popup-fallback" id="popup-fallback">
+      <h2>Der Zauber wartet</h2>
+      <p>Falls dein Browser Popups blockiert, kannst du den Link hier in einem neuen Fenster öffnen.</p>
+      <div class="popup-actions">
+        <a class="button" id="popup-fallback-link" href="#" target="_blank" rel="noopener">Link öffnen</a>
+        <button type="button" id="popup-close">Schließen</button>
+      </div>
+    </dialog>
+    <script>
+      (() => {
+        const fallback = document.getElementById("popup-fallback");
+        const fallbackLink = document.getElementById("popup-fallback-link");
+        const closeButton = document.getElementById("popup-close");
+
+        document.querySelectorAll("a[data-popup-link]").forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const popup = window.open(
+              link.href,
+              "zauberAufPapierPopup",
+              "popup=yes,width=1040,height=780,left=120,top=70"
+            );
+
+            if (popup) {
+              popup.opener = null;
+              popup.focus();
+              return;
+            }
+
+            fallbackLink.href = link.href;
+            fallback.showModal();
+          });
+        });
+
+        closeButton.addEventListener("click", () => fallback.close());
+      })();
+    </script>
+  </body>
+</html>
