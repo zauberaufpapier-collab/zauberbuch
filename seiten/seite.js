@@ -2,6 +2,27 @@
   const fallback = document.getElementById("popup-fallback");
   const fallbackLink = document.getElementById("popup-fallback-link");
   const closeButton = document.getElementById("popup-close");
+  const fallbackTitle = fallback?.querySelector("h2");
+  const fallbackText = fallback?.querySelector(".text");
+
+  const showFallback = ({ title, text, href, label, target = "_blank" }) => {
+    if (!fallback || !fallbackLink) return;
+
+    if (fallbackTitle) fallbackTitle.textContent = title;
+    if (fallbackText) fallbackText.textContent = text;
+    fallbackLink.href = href;
+    fallbackLink.textContent = label;
+
+    if (target) {
+      fallbackLink.target = target;
+      fallbackLink.rel = "noopener";
+    } else {
+      fallbackLink.removeAttribute("target");
+      fallbackLink.removeAttribute("rel");
+    }
+
+    fallback.showModal();
+  };
 
   document.querySelectorAll("a[data-popup-link]").forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -18,10 +39,29 @@
         return;
       }
 
-      fallbackLink.href = link.href;
-      fallback.showModal();
+      showFallback({
+        title: "Der Zauber wartet",
+        text: "Falls dein Browser Popups blockiert, kannst du den Link hier öffnen.",
+        href: link.href,
+        label: "Link öffnen",
+      });
     });
   });
 
-  closeButton?.addEventListener("click", () => fallback.close());
+  document.querySelectorAll("a[data-coming-soon-link]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const bookTitle = link.dataset.bookTitle || "dieses Buch";
+
+      showFallback({
+        title: "Amazon-Link folgt bald",
+        text: `Der Produktlink für ${bookTitle} wird später ergänzt. Bis dahin kannst du per E-Mail anfragen.`,
+        href: link.href,
+        label: "Per E-Mail anfragen",
+        target: "",
+      });
+    });
+  });
+
+  closeButton?.addEventListener("click", () => fallback?.close());
 })();
