@@ -20,17 +20,18 @@
     />
     <style>
       :root {
-        --background: #fffaf7;
-        --surface: #ffffff;
-        --surface-soft: #fff1f4;
-        --primary: #d94d68;
-        --primary-dark: #b93451;
-        --accent: #f7b8c6;
-        --mint: #b8ded2;
-        --lavender: #d9c8f2;
-        --text: #3d2f32;
-        --muted: #7e666b;
-        --border: #f2c8d2;
+        --background: #fff8f3;
+        --surface: #fffdfb;
+        --surface-soft: #fff0ef;
+        --primary: #e75f78;
+        --primary-dark: #bd435d;
+        --accent: #f5a9b8;
+        --mint: #c7ded4;
+        --lavender: #ddd1ec;
+        --gold: #d4a35f;
+        --text: #3d2826;
+        --muted: #725b57;
+        --border: #efd0cf;
       }
 
       * {
@@ -44,9 +45,11 @@
       body {
         margin: 0;
         min-height: 100vh;
+        overflow-x: hidden;
         background:
-          radial-gradient(circle at top left, rgba(184, 222, 210, 0.34), transparent 28rem),
-          linear-gradient(180deg, rgba(255, 241, 244, 0.42), transparent 36rem),
+          linear-gradient(180deg, rgba(255, 246, 242, 0.92), rgba(255, 253, 251, 0.72) 38rem, rgba(255, 248, 243, 0.96)),
+          radial-gradient(circle at 12% 20%, rgba(245, 169, 184, 0.18), transparent 22rem),
+          radial-gradient(circle at 88% 12%, rgba(212, 163, 95, 0.12), transparent 20rem),
           var(--background);
         color: var(--text);
         font-family: "Nunito", system-ui, sans-serif;
@@ -86,7 +89,8 @@
       }
 
       .container {
-        width: min(100% - 2rem, 1120px);
+        width: calc(100% - 2rem);
+        max-width: 1180px;
         margin-inline: auto;
       }
 
@@ -95,16 +99,17 @@
         top: 0;
         z-index: 20;
         border-bottom: 1px solid var(--border);
-        background: rgba(255, 250, 247, 0.94);
+        background: rgba(255, 253, 251, 0.9);
         backdrop-filter: blur(18px);
+        box-shadow: 0 10px 34px rgba(93, 59, 55, 0.06);
       }
 
       .header-inner {
         display: flex;
-        min-height: 80px;
+        min-height: 88px;
         align-items: center;
         justify-content: space-between;
-        gap: 20px;
+        gap: 22px;
       }
 
       .brand {
@@ -112,38 +117,56 @@
         align-items: center;
         gap: 12px;
         font-family: "Fraunces", Georgia, serif;
-        font-size: 1.22rem;
+        color: var(--text);
+        font-size: 1.32rem;
         font-weight: 650;
+        line-height: 1;
       }
 
       .brand-mark {
         display: grid;
-        width: 44px;
-        height: 44px;
+        width: 50px;
+        height: 50px;
         place-items: center;
         border: 1px solid var(--border);
         border-radius: 999px;
-        background: var(--surface-soft);
+        background:
+          radial-gradient(circle, rgba(255, 255, 255, 0.94) 0 46%, rgba(255, 239, 240, 0.92) 48% 100%);
         color: var(--primary);
-        box-shadow: 0 6px 18px rgba(185, 52, 81, 0.08);
+        box-shadow:
+          0 10px 26px rgba(185, 52, 81, 0.1),
+          inset 0 0 0 8px rgba(255, 244, 244, 0.75);
       }
 
       .nav,
       .social {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 24px;
       }
 
       .nav a {
+        position: relative;
         border-radius: 999px;
-        color: var(--muted);
+        color: #4d3734;
         font-size: 0.92rem;
-        font-weight: 900;
+        font-weight: 800;
       }
 
-      .nav a:hover {
+      .nav a:hover,
+      .nav a.active {
         color: var(--primary);
+      }
+
+      .nav a.active::after {
+        position: absolute;
+        right: 14%;
+        bottom: -14px;
+        left: 14%;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        content: "";
       }
 
       .social {
@@ -152,16 +175,16 @@
 
       .social a {
         display: grid;
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         place-items: center;
         border: 1px solid var(--border);
         border-radius: 999px;
-        background: var(--surface);
+        background: rgba(255, 253, 251, 0.88);
         color: var(--primary);
         font-size: 0.78rem;
         font-weight: 900;
-        box-shadow: 0 6px 18px rgba(185, 52, 81, 0.08);
+        box-shadow: 0 8px 20px rgba(185, 52, 81, 0.07);
       }
 
       .social svg {
@@ -175,15 +198,48 @@
       }
 
       .hero {
+        position: relative;
         overflow: hidden;
-        padding: 44px 0 64px;
+        border-bottom: 1px solid rgba(239, 208, 207, 0.82);
+        background:
+          linear-gradient(90deg, rgba(255, 253, 251, 0.96), rgba(255, 248, 246, 0.72)),
+          radial-gradient(circle at 5% 92%, rgba(245, 169, 184, 0.22), transparent 22rem);
+        padding: 62px 0 0;
+      }
+
+      .hero::before,
+      .hero::after {
+        position: absolute;
+        color: var(--gold);
+        font-family: "Fraunces", Georgia, serif;
+        pointer-events: none;
+      }
+
+      .hero::before {
+        top: 108px;
+        left: max(1rem, calc((100vw - 1180px) / 2));
+        content: "✦";
+        font-size: 1.35rem;
+      }
+
+      .hero::after {
+        right: max(2rem, calc((100vw - 1180px) / 2 + 3rem));
+        bottom: 92px;
+        content: "☾";
+        font-size: 2rem;
+        opacity: 0.72;
       }
 
       .hero-grid {
         display: grid;
         align-items: center;
-        gap: 44px;
-        grid-template-columns: 1.02fr 0.98fr;
+        gap: 52px;
+        grid-template-columns: 0.95fr 1.05fr;
+      }
+
+      .hero-grid > *,
+      .product-grid > * {
+        min-width: 0;
       }
 
       .eyebrow,
@@ -201,17 +257,18 @@
 
       .eyebrow {
         margin-bottom: 20px;
-        padding: 10px 16px;
+        padding: 9px 15px;
+        background: rgba(255, 253, 251, 0.8);
       }
 
       .hero h1 {
-        max-width: 760px;
-        font-size: clamp(2.45rem, 5vw, 4.75rem);
+        max-width: 650px;
+        font-size: clamp(2.35rem, 4.4vw, 4rem);
         line-height: 1.06;
       }
 
       .hero-copy {
-        max-width: 610px;
+        max-width: 560px;
         margin-top: 24px;
         color: var(--muted);
         font-size: 1.15rem;
@@ -233,11 +290,11 @@
         border: 1px solid transparent;
         border-radius: 999px;
         padding: 14px 26px;
-        background: var(--primary);
+        background: linear-gradient(135deg, var(--primary), #e96f85);
         color: white;
         font-size: 1rem;
         font-weight: 900;
-        box-shadow: 0 18px 55px rgba(185, 52, 81, 0.15);
+        box-shadow: 0 16px 38px rgba(185, 52, 81, 0.17);
       }
 
       .button:hover {
@@ -259,82 +316,92 @@
 
       .hero-image-wrap {
         position: relative;
-        max-width: 520px;
+        width: 100%;
+        max-width: 720px;
         margin-inline: auto;
       }
 
       .hero-image-card {
-        border: 1px solid var(--border);
-        border-radius: 36px;
-        background: var(--surface);
-        padding: 16px;
-        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.18);
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
       }
 
       .hero-image {
-        aspect-ratio: 1;
+        aspect-ratio: 1.34;
         overflow: hidden;
-        border-radius: 28px;
-        background: var(--surface-soft);
+        border-radius: 0;
+        background: transparent;
       }
 
       .hero-image img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        object-position: center bottom;
       }
 
       .floating-label {
         position: absolute;
-        right: 28px;
-        top: 4px;
+        right: 10%;
+        top: 20px;
         z-index: 2;
         border-radius: 999px;
-        background: var(--surface);
+        border: 1px solid rgba(239, 208, 207, 0.86);
+        background: rgba(255, 253, 251, 0.78);
         padding: 10px 16px;
         color: var(--primary);
         font-size: 0.9rem;
         font-weight: 900;
-        box-shadow: 0 18px 55px rgba(185, 52, 81, 0.15);
+        box-shadow: 0 18px 42px rgba(93, 59, 55, 0.09);
       }
 
       .benefits {
-        padding-bottom: 72px;
+        background: linear-gradient(180deg, rgba(255, 240, 239, 0.7), rgba(255, 253, 251, 0.7));
+        padding: 0 0 46px;
       }
 
       .benefit-grid {
         display: grid;
-        gap: 16px;
+        gap: 0;
         grid-template-columns: repeat(4, 1fr);
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        background: var(--surface);
-        padding: 16px;
-        box-shadow: 0 18px 55px rgba(185, 52, 81, 0.13);
+        border: 0;
+        border-radius: 0;
+        background: rgba(255, 253, 251, 0.72);
+        box-shadow: 0 12px 32px rgba(93, 59, 55, 0.06);
       }
 
       .benefit {
-        display: flex;
-        gap: 14px;
-        padding: 12px;
+        display: grid;
+        min-height: 160px;
+        gap: 8px;
+        align-content: center;
+        justify-items: center;
+        border-left: 1px solid rgba(239, 208, 207, 0.78);
+        padding: 24px 20px 22px;
+        text-align: center;
+      }
+
+      .benefit:first-child {
+        border-left: 0;
       }
 
       .benefit-icon {
-        display: grid;
-        flex: 0 0 auto;
-        width: 48px;
-        height: 48px;
-        place-items: center;
-        border-radius: 999px;
-        background: var(--surface-soft);
-        color: var(--primary);
-        font-weight: 900;
+        display: block;
+        width: 96px;
+        height: 74px;
+        object-fit: contain;
+        object-position: center bottom;
+        opacity: 0.92;
       }
 
       .benefit h3 {
-        font-family: "Nunito", system-ui, sans-serif;
-        font-size: 1rem;
-        font-weight: 900;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.18rem;
+        font-weight: 650;
+        line-height: 1.16;
       }
 
       .benefit p {
@@ -345,13 +412,14 @@
       }
 
       section {
-        padding: 64px 0;
+        position: relative;
+        padding: 70px 0;
         scroll-margin-top: 112px;
       }
 
       .section-title {
-        max-width: 760px;
-        margin: 0 auto 42px;
+        max-width: 780px;
+        margin: 0 auto 46px;
         text-align: center;
       }
 
@@ -361,13 +429,19 @@
       }
 
       .section-title h2 {
-        display: inline-flex;
-        border-radius: 999px;
-        background: var(--surface-soft);
-        padding: 12px 24px;
+        display: block;
+        color: var(--text);
         font-size: clamp(2rem, 4vw, 2.65rem);
         line-height: 1.15;
-        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+      }
+
+      .section-title h2::after {
+        display: block;
+        width: 148px;
+        height: 1px;
+        margin: 18px auto 0;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        content: "";
       }
 
       .section-title p {
@@ -380,7 +454,7 @@
 
       .freebie-grid {
         display: grid;
-        gap: 24px;
+        gap: 26px;
         grid-template-columns: repeat(4, 1fr);
       }
 
@@ -388,28 +462,29 @@
       .why-card,
       .product {
         border: 1px solid var(--border);
-        background: var(--surface);
-        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+        background: rgba(255, 253, 251, 0.88);
+        box-shadow: 0 12px 32px rgba(93, 59, 55, 0.07);
       }
 
       .freebie-card {
         display: flex;
         overflow: hidden;
         flex-direction: column;
-        border-radius: 28px;
+        border-radius: 22px;
       }
 
       .freebie-card:hover,
       .product:hover {
         transform: translateY(-4px);
-        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.18);
+        box-shadow: 0 24px 54px rgba(93, 59, 55, 0.13);
       }
 
       .freebie-image {
         position: relative;
         aspect-ratio: 1;
         overflow: hidden;
-        background: var(--surface-soft);
+        border-bottom: 1px solid var(--border);
+        background: linear-gradient(180deg, #fff7f5, #fffdfb);
       }
 
       .freebie-image img {
@@ -423,7 +498,8 @@
         left: 16px;
         top: 16px;
         border-radius: 999px;
-        background: var(--surface);
+        border: 1px solid rgba(239, 208, 207, 0.86);
+        background: rgba(255, 253, 251, 0.9);
         padding: 7px 12px;
         color: var(--primary);
         font-size: 0.75rem;
@@ -435,7 +511,7 @@
         display: flex;
         flex: 1;
         flex-direction: column;
-        padding: 24px;
+        padding: 24px 22px 22px;
       }
 
       .subtitle {
@@ -458,8 +534,9 @@
 
       .teaser-box {
         margin-top: 16px;
-        border-radius: 18px;
-        background: var(--surface-soft);
+        border: 1px solid rgba(239, 208, 207, 0.68);
+        border-radius: 16px;
+        background: rgba(255, 240, 239, 0.62);
         padding: 12px 14px;
         color: var(--text);
         font-size: 0.92rem;
@@ -474,38 +551,43 @@
 
       .product-list {
         display: grid;
-        gap: 32px;
+        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       }
 
       .product {
         overflow: hidden;
-        border-radius: 28px;
+        border-radius: 22px;
         transition:
           box-shadow 180ms ease,
           transform 180ms ease;
       }
 
       .product-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
       }
 
       .product:nth-child(even) .product-media {
-        order: 2;
+        order: 0;
       }
 
       .product-media {
-        background: var(--surface-soft);
-        padding: 20px;
+        border-bottom: 1px solid var(--border);
+        background:
+          linear-gradient(180deg, rgba(255, 240, 239, 0.76), rgba(255, 253, 251, 0.95));
+        padding: 14px;
       }
 
       .product-image {
         display: grid;
-        min-height: 440px;
+        min-height: 0;
+        aspect-ratio: 1;
         place-items: center;
         overflow: hidden;
-        border-radius: 24px;
-        background: var(--background);
+        border-radius: 18px;
+        background: rgba(255, 253, 251, 0.78);
       }
 
       .product-image img {
@@ -516,25 +598,18 @@
 
       .product-content {
         display: flex;
+        flex: 1;
         flex-direction: column;
-        justify-content: center;
-        padding: 44px;
+        justify-content: flex-start;
+        padding: 22px;
       }
 
       .mini-row {
-        display: flex;
-        align-items: center;
-        gap: 16px;
+        display: block;
       }
 
       .mini-cover {
-        width: 80px;
-        height: 80px;
-        overflow: hidden;
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        background: var(--surface-soft);
-        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+        display: none;
       }
 
       .mini-cover img {
@@ -546,43 +621,44 @@
       .mini-badge {
         display: inline-flex;
         border-radius: 999px;
-        background: var(--mint);
+        border: 1px solid rgba(212, 163, 95, 0.42);
+        background: rgba(255, 247, 234, 0.92);
         padding: 7px 12px;
-        color: var(--text);
+        color: var(--primary-dark);
         font-size: 0.78rem;
         font-weight: 900;
       }
 
       .product h3 {
-        margin-top: 24px;
-        font-size: clamp(2rem, 4vw, 2.65rem);
-        line-height: 1.12;
+        margin-top: 14px;
+        font-size: clamp(1.45rem, 2vw, 1.78rem);
+        line-height: 1.15;
       }
 
       .product-desc {
-        margin-top: 16px;
-        font-size: 1.08rem;
+        margin-top: 12px;
+        font-size: 0.98rem;
       }
 
       .product-teaser {
-        margin-top: 24px;
+        margin-top: 18px;
         border: 1px solid var(--border);
-        border-radius: 24px;
-        background: var(--surface-soft);
-        padding: 12px;
+        border-radius: 16px;
+        background: rgba(255, 240, 239, 0.58);
+        padding: 10px;
       }
 
       .product-teaser-grid {
         display: grid;
         align-items: center;
-        gap: 16px;
-        grid-template-columns: 128px 1fr;
+        gap: 10px;
+        grid-template-columns: 68px 1fr;
       }
 
       .teaser-image {
         aspect-ratio: 1;
         overflow: hidden;
-        border-radius: 16px;
+        border-radius: 12px;
         background: var(--surface);
       }
 
@@ -594,21 +670,23 @@
 
       .teaser-label {
         color: var(--primary);
-        font-size: 0.75rem;
+        font-size: 0.68rem;
         font-weight: 900;
         text-transform: uppercase;
       }
 
       .product-teaser p {
-        margin-top: 6px;
+        margin-top: 4px;
         color: var(--text);
+        font-size: 0.88rem;
         font-weight: 800;
+        line-height: 1.42;
       }
 
       .highlight-list {
         display: grid;
-        gap: 12px;
-        margin: 24px 0 0;
+        gap: 9px;
+        margin: 18px 0 18px;
         padding: 0;
         list-style: none;
       }
@@ -616,19 +694,38 @@
       .highlight-list li {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 9px;
+        color: var(--text);
+        font-size: 0.88rem;
         font-weight: 900;
       }
 
       .check {
         display: grid;
-        width: 28px;
-        height: 28px;
+        width: 23px;
+        height: 23px;
         flex: 0 0 auto;
+        place-items: center;
+        border-radius: 999px;
+        background: rgba(255, 240, 239, 0.92);
+        color: var(--primary);
+      }
+
+      .product .button {
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .why-card .benefit-icon,
+      .magic-grid .benefit-icon {
+        display: grid;
+        width: 48px;
+        height: 48px;
         place-items: center;
         border-radius: 999px;
         background: var(--surface-soft);
         color: var(--primary);
+        font-weight: 900;
       }
 
       .why-grid {
@@ -807,7 +904,11 @@
 
         .nav,
         .social {
+          width: 100%;
+          max-width: 100%;
+          min-width: 0;
           flex-wrap: wrap;
+          justify-content: flex-start;
         }
 
         .hero-grid,
@@ -834,7 +935,8 @@
 
       @media (max-width: 640px) {
         .container {
-          width: min(100% - 1.25rem, 1120px);
+          width: calc(100% - 1.25rem);
+          max-width: 1180px;
         }
 
         .brand {
@@ -842,11 +944,51 @@
         }
 
         .nav {
-          gap: 12px;
+          display: grid;
+          gap: 10px 12px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .nav a {
+          min-width: 0;
+          font-size: 0.84rem;
+          line-height: 1.2;
+          overflow-wrap: break-word;
+        }
+
+        .nav a.active::after {
+          display: none;
         }
 
         .hero {
           padding-top: 32px;
+        }
+
+        .hero h1 {
+          max-width: 340px;
+          font-size: clamp(1.95rem, 7.5vw, 2.2rem);
+          overflow-wrap: anywhere;
+          hyphens: auto;
+        }
+
+        .hero-copy {
+          max-width: 340px;
+          font-size: 1.03rem;
+          overflow-wrap: break-word;
+        }
+
+        .hero-image-wrap {
+          max-width: 100%;
+          overflow: hidden;
+        }
+
+        .floating-label {
+          right: auto;
+          left: 50%;
+          max-width: calc(100% - 1rem);
+          transform: translateX(-50%);
+          white-space: nowrap;
+          font-size: 0.78rem;
         }
 
         .button-row,
@@ -854,17 +996,31 @@
           width: 100%;
         }
 
+        .button-row {
+          max-width: 350px;
+        }
+
         .benefit-grid,
         .freebie-grid,
         .product-teaser-grid {
           grid-template-columns: 1fr;
         }
+
+        .benefit {
+          border-top: 1px solid rgba(239, 208, 207, 0.78);
+          border-left: 0;
+        }
+
+        .benefit:first-child {
+          border-top: 0;
+        }
+
         .product-content {
           padding: 26px;
         }
 
         .product-image {
-          min-height: 320px;
+          min-height: 0;
         }
 
         .section-title h2 {
@@ -914,10 +1070,10 @@
             </div>
           </div>
           <div class="hero-image-wrap">
-            <div class="floating-label">Kreativ & bunt</div>
+            <div class="floating-label">Liebevoll. Magisch. Kreativ.</div>
             <div class="hero-image-card">
               <div class="hero-image">
-                <img src="images/lina-herzlich.png" alt="Buchmockup Lina Herzlicht von Zauber auf Papier" />
+                <img src="images/home-hero-unicorn.png" alt="Magische Illustration mit Einhorn und offenem Buch" />
               </div>
             </div>
           </div>
@@ -926,34 +1082,34 @@
 
       <div class="benefits">
         <div class="container benefit-grid">
-          <article class="benefit">
-            <span class="benefit-icon" aria-hidden="true">✎</span>
+          <a class="benefit" href="seiten/malbuch-schaetze.html">
+            <img class="benefit-icon" src="images/home-icon-book.png" alt="" aria-hidden="true" />
             <div>
-              <h3>Kreativ & bunt</h3>
-              <p>Sanfte Motive, die Kinder direkt zum Ausmalen einladen.</p>
+              <h3>Malbücher für Große</h3>
+              <p>Entspannung und Kreativität für deine Auszeit.</p>
             </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit-icon" aria-hidden="true">✦</span>
+          </a>
+          <a class="benefit" href="seiten/sternenmalerei.html">
+            <img class="benefit-icon" src="images/home-icon-castle.png" alt="" aria-hidden="true" />
             <div>
-              <h3>Für kleine Künstler</h3>
-              <p>Klare Formen und freundliche Details für viele Altersgruppen.</p>
+              <h3>Malbuchzauber</h3>
+              <p>Magische Ausmalwelten für kleine Träumer.</p>
             </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit-icon" aria-hidden="true">♡</span>
+          </a>
+          <a class="benefit" href="seiten/serienzauber.html">
+            <img class="benefit-icon" src="images/home-icon-storybook.png" alt="" aria-hidden="true" />
             <div>
-              <h3>Liebevoll illustriert</h3>
-              <p>Jede Seite ist mit Wärme, Ruhe und Fantasie gestaltet.</p>
+              <h3>Serienzauber</h3>
+              <p>Fortlaufende Abenteuer, die verzaubern.</p>
             </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit-icon" aria-hidden="true">→</span>
+          </a>
+          <a class="benefit" href="seiten/geschichtenreich.html">
+            <img class="benefit-icon" src="images/home-icon-potion.png" alt="" aria-hidden="true" />
             <div>
-              <h3>Sofort entdecken</h3>
-              <p>Freebies und Bücher sind klar sortiert und leicht erreichbar.</p>
+              <h3>Geschichtenreich</h3>
+              <p>Geschichten, die von Herzen kommen.</p>
             </div>
-          </article>
+          </a>
         </div>
       </div>
 
