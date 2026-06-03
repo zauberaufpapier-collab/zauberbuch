@@ -564,6 +564,563 @@ section {
   font-weight: 900;
 }
 
+.about-page {
+  --about-cream: #fff8f2;
+  --about-rose: #e85d80;
+  --about-rose-dark: #b73b5a;
+  --about-blush: #fde9eb;
+  --about-gold: #d9a35b;
+  --about-brown: #4b2a22;
+  background:
+    linear-gradient(180deg, rgba(255, 244, 239, 0.96), rgba(255, 250, 247, 0.98)),
+    var(--about-cream);
+}
+
+.about-page h1,
+.about-page h2 {
+  color: var(--about-brown);
+}
+
+.about-header {
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  border-bottom: 1px solid rgba(217, 163, 91, 0.22);
+  background: rgba(255, 248, 242, 0.96);
+  backdrop-filter: blur(18px);
+}
+
+.about-header-inner {
+  display: flex;
+  min-height: 92px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.about-logo {
+  display: grid;
+  gap: 6px;
+  color: var(--about-brown);
+  font-family: "Dancing Script", cursive;
+  font-size: 2.35rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.about-logo em {
+  color: var(--about-rose);
+  font-style: normal;
+}
+
+.about-logo small {
+  color: #7a5148;
+  font-family: "Nunito", system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-nav,
+.about-social {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.about-nav a {
+  position: relative;
+  color: var(--about-brown);
+  font-size: 0.96rem;
+  font-weight: 900;
+}
+
+.about-nav a:hover,
+.about-nav a.active {
+  color: var(--about-rose);
+}
+
+.about-nav a.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -18px;
+  left: 0;
+  color: var(--about-rose);
+  content: "— ♥ —";
+  font-size: 0.86rem;
+  text-align: center;
+}
+
+.about-social a {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--about-rose);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(232, 93, 128, 0.22);
+}
+
+.about-social svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-main,
+.about-page main {
+  overflow: hidden;
+}
+
+.about-hero {
+  padding: 64px 0 54px;
+}
+
+.about-hero-grid {
+  display: grid;
+  align-items: center;
+  gap: 42px;
+  grid-template-columns: 0.92fr 1.08fr;
+}
+
+.about-hero-copy {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.about-kicker {
+  color: var(--about-rose);
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-hero h1 {
+  margin-top: 22px;
+  font-size: 4.7rem;
+  line-height: 1;
+}
+
+.about-script {
+  color: var(--about-rose);
+  font-family: "Dancing Script", cursive;
+  font-size: 2.35rem;
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.about-hero .about-script {
+  margin-top: 12px;
+}
+
+.about-gold-line {
+  display: flex;
+  max-width: 320px;
+  align-items: center;
+  gap: 14px;
+  margin: 22px auto;
+  color: var(--about-gold);
+}
+
+.about-gold-line span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, var(--about-gold), transparent);
+}
+
+.about-intro,
+.about-quote {
+  max-width: 560px;
+  margin-inline: auto;
+  color: #5d3f38;
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.about-quote {
+  margin-top: 26px;
+  color: var(--about-brown);
+  font-family: "Dancing Script", cursive;
+  font-size: 1.7rem;
+  line-height: 1.35;
+}
+
+.about-hero-image {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(217, 163, 91, 0.34);
+  border-radius: 34px;
+  background: var(--about-blush);
+  box-shadow: 0 24px 70px rgba(120, 59, 73, 0.18);
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: min(72vh, 760px);
+  min-height: 560px;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.about-hero-image figcaption {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  background: rgba(255, 248, 242, 0.82);
+  color: var(--about-rose-dark);
+  padding: 10px 16px;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.28rem;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(75, 42, 34, 0.12);
+}
+
+.about-section-title,
+.about-traits-heading {
+  text-align: center;
+}
+
+.about-section-title h2,
+.about-traits-heading h2,
+.about-soul-box h2 {
+  font-size: 2.65rem;
+  line-height: 1.12;
+}
+
+.about-section-title h2 {
+  color: var(--about-rose);
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+}
+
+.about-mermaid,
+.about-traits,
+.about-soul,
+.about-closing {
+  padding: 64px 0;
+}
+
+.about-mermaid-grid {
+  display: grid;
+  align-items: center;
+  gap: 32px;
+  grid-template-columns: 0.82fr 1.1fr 0.78fr;
+  margin-top: 34px;
+}
+
+.about-bath-scene {
+  border: 1px solid rgba(217, 163, 91, 0.22);
+  border-radius: 28px;
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0 8px, rgba(253, 233, 235, 0.38) 8px 16px),
+    #fff6f4;
+  padding: 26px;
+  box-shadow: 0 18px 55px rgba(185, 52, 81, 0.1);
+}
+
+.about-bath-stars {
+  color: var(--about-gold);
+  font-size: 1.45rem;
+  text-align: right;
+}
+
+.about-bath-tile {
+  position: relative;
+  min-height: 240px;
+}
+
+.about-bath {
+  position: absolute;
+  right: 8%;
+  bottom: 20px;
+  left: 5%;
+  height: 86px;
+  border: 4px solid #d7a36e;
+  border-radius: 12px 12px 72px 72px;
+  background: #fff;
+  box-shadow: inset 0 -16px 0 #f8dfe4, 0 18px 36px rgba(75, 42, 34, 0.1);
+}
+
+.about-tail {
+  position: absolute;
+  left: 38%;
+  bottom: 78px;
+  width: 70px;
+  height: 128px;
+  border-radius: 55% 55% 18px 18px;
+  background: linear-gradient(180deg, #f06f93, #f6a7b8);
+  transform: rotate(-16deg);
+  transform-origin: bottom center;
+  box-shadow: inset -10px 0 0 rgba(185, 52, 81, 0.16);
+}
+
+.about-tail::before,
+.about-tail::after {
+  position: absolute;
+  top: -35px;
+  width: 54px;
+  height: 72px;
+  border-radius: 80% 12% 80% 22%;
+  background: linear-gradient(160deg, #f7b8c6, #e85d80);
+  content: "";
+}
+
+.about-tail::before {
+  left: -28px;
+  transform: rotate(-34deg);
+}
+
+.about-tail::after {
+  right: -28px;
+  transform: rotate(34deg) scaleX(-1);
+}
+
+.about-foam {
+  position: absolute;
+  z-index: 2;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.65);
+}
+
+.foam-a {
+  right: 34%;
+  bottom: 100px;
+  width: 44px;
+  height: 44px;
+}
+
+.foam-b {
+  right: 48%;
+  bottom: 92px;
+  width: 34px;
+  height: 34px;
+}
+
+.foam-c {
+  right: 22%;
+  bottom: 86px;
+  width: 30px;
+  height: 30px;
+}
+
+.about-candle {
+  position: absolute;
+  right: 6px;
+  bottom: 26px;
+  width: 24px;
+  height: 54px;
+  border-radius: 10px;
+  background: #ffd9c3;
+}
+
+.about-candle::before {
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  width: 11px;
+  height: 18px;
+  border-radius: 999px 999px 999px 0;
+  background: #f4a34d;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.about-mermaid-text {
+  columns: 2 230px;
+  column-gap: 28px;
+}
+
+.about-mermaid-text p {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  color: #5d3f38;
+  line-height: 1.72;
+}
+
+.about-mermaid-text p::before {
+  color: var(--about-rose);
+  content: "♥ ";
+  font-weight: 900;
+}
+
+.about-watercolor-note {
+  border: 1px solid rgba(232, 93, 128, 0.18);
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, rgba(253, 233, 235, 0.95), rgba(255, 248, 242, 0.82)),
+    #fff;
+  color: #68453e;
+  padding: 32px;
+  line-height: 1.75;
+  text-align: center;
+  box-shadow: 0 18px 55px rgba(185, 52, 81, 0.09);
+}
+
+.about-watercolor-note strong {
+  display: block;
+  margin-top: 22px;
+  color: var(--about-rose);
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.about-traits-layout {
+  display: grid;
+  align-items: center;
+  gap: 34px;
+  grid-template-columns: 1fr 260px;
+  margin-top: 34px;
+}
+
+.about-trait-grid {
+  display: grid;
+  gap: 22px 26px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-trait-grid article {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  min-width: 0;
+}
+
+.about-trait-grid span {
+  color: var(--about-rose);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.about-trait-grid h3 {
+  color: var(--about-rose);
+  font-family: "Nunito", system-ui, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.about-trait-grid p {
+  margin-top: 4px;
+  color: #6b504b;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.about-polaroid {
+  position: relative;
+  max-width: 260px;
+  margin: 0 auto;
+  border: 1px solid rgba(217, 163, 91, 0.2);
+  border-radius: 10px;
+  background: #fff;
+  padding: 12px 12px 22px;
+  box-shadow: 0 18px 55px rgba(75, 42, 34, 0.18);
+  transform: rotate(4deg);
+}
+
+.about-polaroid::before {
+  position: absolute;
+  top: -18px;
+  right: 24px;
+  width: 124px;
+  height: 36px;
+  border-radius: 4px;
+  background: rgba(238, 151, 168, 0.5);
+  content: "";
+  transform: rotate(6deg);
+}
+
+.about-polaroid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.about-polaroid figcaption {
+  margin-top: 10px;
+  color: var(--about-rose-dark);
+  font-family: "Dancing Script", cursive;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.about-soul-box {
+  display: grid;
+  align-items: center;
+  gap: 28px;
+  grid-template-columns: 180px 1fr;
+  border: 1px solid rgba(217, 163, 91, 0.44);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 34px;
+  box-shadow: 0 18px 55px rgba(185, 52, 81, 0.08);
+}
+
+.about-soul-fairy {
+  display: grid;
+  height: 150px;
+  place-items: center;
+  border-radius: 28px;
+  background:
+    linear-gradient(140deg, rgba(253, 233, 235, 0.9), rgba(255, 248, 242, 0.9)),
+    #fff;
+  color: var(--about-rose);
+  font-size: 4rem;
+  box-shadow: inset 0 0 0 1px rgba(232, 93, 128, 0.14);
+}
+
+.about-soul-box p {
+  max-width: 760px;
+  margin-top: 14px;
+  color: #5d3f38;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-soul-box strong {
+  display: block;
+  margin-top: 18px;
+  color: var(--about-rose);
+  font-size: 1.12rem;
+}
+
+.about-closing {
+  padding-top: 24px;
+}
+
+.about-closing-grid {
+  display: grid;
+  align-items: center;
+  gap: 28px;
+  grid-template-columns: 86px 1fr auto;
+}
+
+.about-closing-heart {
+  color: var(--about-rose);
+  font-family: "Dancing Script", cursive;
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.about-closing .about-script {
+  color: var(--about-brown);
+  font-size: 2rem;
+}
+
+.about-books-button {
+  min-width: 250px;
+  background: var(--about-rose);
+  box-shadow: 0 18px 55px rgba(232, 93, 128, 0.24);
+}
+
 @media (max-width: 980px) {
   .header-inner,
   .footer-grid,
@@ -587,6 +1144,50 @@ section {
   .series-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .about-header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px 0;
+  }
+
+  .about-nav,
+  .about-social {
+    flex-wrap: wrap;
+  }
+
+  .about-nav a.active::after {
+    display: none;
+  }
+
+  .about-hero-grid,
+  .about-mermaid-grid,
+  .about-traits-layout,
+  .about-soul-box,
+  .about-closing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    padding-top: 44px;
+  }
+
+  .about-hero h1 {
+    font-size: 3.6rem;
+  }
+
+  .about-hero-image img {
+    height: auto;
+    min-height: 0;
+  }
+
+  .about-trait-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-closing-grid {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
@@ -604,6 +1205,61 @@ section {
 
   .button,
   .actions {
+    width: 100%;
+  }
+
+  .about-logo {
+    font-size: 2rem;
+  }
+
+  .about-logo small {
+    font-size: 0.7rem;
+  }
+
+  .about-nav {
+    gap: 12px;
+  }
+
+  .about-nav a {
+    font-size: 0.9rem;
+  }
+
+  .about-hero h1 {
+    font-size: 3rem;
+  }
+
+  .about-script,
+  .about-quote,
+  .about-closing .about-script {
+    font-size: 1.7rem;
+  }
+
+  .about-section-title h2,
+  .about-traits-heading h2,
+  .about-soul-box h2 {
+    font-size: 2.1rem;
+  }
+
+  .about-mermaid,
+  .about-traits,
+  .about-soul,
+  .about-closing {
+    padding: 42px 0;
+  }
+
+  .about-mermaid-text {
+    columns: 1;
+  }
+
+  .about-trait-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-soul-box {
+    padding: 24px;
+  }
+
+  .about-books-button {
     width: 100%;
   }
 }
