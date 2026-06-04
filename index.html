@@ -127,6 +127,16 @@
         transform: translateY(0);
       }
 
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        clip-path: inset(50%);
+      }
+
       .site-header {
         position: sticky;
         top: 0;
@@ -535,6 +545,32 @@
         background:
           radial-gradient(60% 140% at 50% -10%, transparent 57%, #ffffff 58%),
           linear-gradient(180deg, rgba(223, 244, 255, 0.46), #ffffff);
+      }
+
+      .banner-hero {
+        padding: 28px 0 42px;
+        background:
+          radial-gradient(circle at 10% 70%, rgba(124, 200, 231, 0.14), transparent 18rem),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(244, 251, 255, 0.58));
+      }
+
+      .banner-frame {
+        overflow: hidden;
+        border: 1px solid rgba(216, 235, 241, 0.92);
+        border-radius: 28px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .banner-frame picture,
+      .header-banner {
+        display: block;
+        width: 100%;
+      }
+
+      .header-banner {
+        aspect-ratio: 1920 / 620;
+        object-fit: cover;
       }
 
       section {
@@ -1049,6 +1085,20 @@
         }
       }
 
+      @media (max-width: 679px) {
+        .banner-hero {
+          padding: 18px 0 32px;
+        }
+
+        .banner-frame {
+          border-radius: 22px;
+        }
+
+        .header-banner {
+          aspect-ratio: 900 / 980;
+        }
+      }
+
       @media (min-width: 680px) {
         .header-inner {
           grid-template-columns: auto 1fr;
@@ -1229,55 +1279,23 @@
     </header>
 
     <main id="hauptinhalt">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <span class="kicker">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2.5 14.5 9l7 3-7 3-2.5 6.5L9.5 15l-7-3 7-3L12 2.5z" fill="currentColor" />
-              </svg>
-              Moderne Kinderbuchwelten
-            </span>
-            <h1 id="hero-title">ZAUBER AUF <span>PAPIER</span></h1>
-            <p class="hero-subtitle">Kinderbücher voller Fantasie, Abenteuer und Herz.</p>
-            <div class="hero-actions">
-              <a class="button" href="#buecher">
-                Bücher entdecken
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </a>
-              <a class="button secondary" href="#buchwelten">Buchwelten ansehen</a>
-            </div>
-            <div class="hero-note">
-              <img src="images/fluse-mini.jpg" alt="Fluse, das kleine Maskottchen von Zauber auf Papier" />
-              <span>Fluse begleitet dich durch die Welt von Geschichten, Rätseln und Kreativität.</span>
-            </div>
-          </div>
-
-          <div class="hero-art" aria-label="Offenes Buch mit Buchwelten und Fluse">
-            <span class="spark one" aria-hidden="true">✦</span>
-            <span class="spark two" aria-hidden="true">✦</span>
-            <span class="spark three" aria-hidden="true">✦</span>
-            <div class="world-orbit" aria-hidden="true">
-              <span class="world-bubble brombeer"><img src="images/home-world-brombeerstadt.jpg" alt="" /></span>
-              <span class="world-bubble lio"><img src="images/home-world-lio.jpg" alt="" /></span>
-              <span class="world-bubble flunker"><img src="images/home-world-flunkerfunken.jpg" alt="" /></span>
-              <span class="world-bubble malbuch"><img src="images/home-world-malbuch.jpg" alt="" /></span>
-            </div>
-            <img class="fluse-hero" src="images/fluse-guide.jpg" alt="Fluse mit Zauberbuch" />
-            <div class="book-stage" aria-hidden="true">
-              <div class="open-book">
-                <span class="book-page left"></span>
-                <span class="book-page right"></span>
-                <span class="book-spine"></span>
-              </div>
-            </div>
+      <section class="banner-hero" aria-labelledby="hero-title">
+        <div class="container">
+          <h1 class="visually-hidden" id="hero-title">Zauber auf Papier - Kinderbücher voller Fantasie, Abenteuer und Herz</h1>
+          <div class="banner-frame" aria-label="Zauber auf Papier Banner">
+            <picture>
+              <source media="(max-width: 679px)" srcset="images/home-header-banner-mobile.jpg" />
+              <img
+                class="header-banner"
+                src="images/home-header-banner.jpg"
+                alt="Zauber auf Papier: Kinderbücher voller Fantasie, Abenteuer und Herz mit Fluse und Buchwelten"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
           </div>
         </div>
       </section>
-
-      <div class="wave-divider" aria-hidden="true"></div>
 
       <section class="worlds" id="buchwelten" aria-labelledby="worlds-title">
         <div class="container">
