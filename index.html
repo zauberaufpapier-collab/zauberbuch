@@ -3,35 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Zauber auf Papier | Malbücher & Gratis Ebooks für Kinder</title>
+    <title>Zauber auf Papier | Kinderbücher voller Fantasie, Abenteuer und Herz</title>
     <meta
       name="description"
-      content="Liebevoll gestaltete Malbücher, Gratis-Ebooks und kreative Ausmalwelten für Kinder."
+      content="Zauber auf Papier ist eine helle Kinderbuchmarke mit magischen Geschichten, kreativen Malbüchern, Freebies und liebevoll gestalteten Buchwelten."
     />
     <meta name="author" content="Nicole Feller" />
     <meta name="publisher" content="Nicole Feller" />
     <meta name="copyright" content="© 2026 Nicole Feller. Alle Rechte vorbehalten." />
     <meta property="og:site_name" content="Zauber auf Papier" />
+    <meta property="og:title" content="Zauber auf Papier" />
+    <meta
+      property="og:description"
+      content="Kinderbücher voller Fantasie, Abenteuer und Herz."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Nunito:wght@400;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&family=Nunito:wght@400;700;800;900&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --background: #fff8f3;
-        --surface: #fffdfb;
-        --surface-soft: #fff0ef;
-        --primary: #e75f78;
-        --primary-dark: #bd435d;
-        --accent: #f5a9b8;
-        --mint: #c7ded4;
-        --lavender: #ddd1ec;
-        --gold: #d4a35f;
-        --text: #3d2826;
-        --muted: #725b57;
-        --border: #efd0cf;
+        --ink: #12365a;
+        --ink-soft: #34516b;
+        --muted: #607589;
+        --paper: #fffefa;
+        --white: #ffffff;
+        --cloud: #f4fbff;
+        --sky: #dff4ff;
+        --sky-strong: #7cc8e7;
+        --turquoise: #28b9b0;
+        --turquoise-dark: #168d88;
+        --coral: #ff6f61;
+        --coral-dark: #d94b45;
+        --sage: #9bc8a5;
+        --sage-dark: #4f8f68;
+        --gold: #e7b65b;
+        --gold-soft: #fff4cf;
+        --line: #d8ebf1;
+        --shadow: 0 22px 65px rgba(18, 54, 90, 0.12);
+        --soft-shadow: 0 14px 40px rgba(18, 54, 90, 0.09);
       }
 
       * {
@@ -47,16 +59,19 @@
         min-height: 100vh;
         overflow-x: hidden;
         background:
-          linear-gradient(180deg, rgba(255, 246, 242, 0.92), rgba(255, 253, 251, 0.72) 38rem, rgba(255, 248, 243, 0.96)),
-          radial-gradient(circle at 12% 20%, rgba(245, 169, 184, 0.18), transparent 22rem),
-          radial-gradient(circle at 88% 12%, rgba(212, 163, 95, 0.12), transparent 20rem),
-          var(--background);
-        color: var(--text);
+          radial-gradient(circle at 12% 8%, rgba(124, 200, 231, 0.18), transparent 22rem),
+          radial-gradient(circle at 92% 18%, rgba(40, 185, 176, 0.11), transparent 20rem),
+          linear-gradient(180deg, #fbfeff 0%, #ffffff 38%, #f8fcfb 100%);
+        color: var(--ink);
         font-family: "Nunito", system-ui, sans-serif;
       }
 
-      img {
+      img,
+      svg {
         display: block;
+      }
+
+      img {
         max-width: 100%;
       }
 
@@ -72,6 +87,7 @@
           border-color 180ms ease,
           box-shadow 180ms ease,
           color 180ms ease,
+          opacity 180ms ease,
           transform 180ms ease;
       }
 
@@ -80,7 +96,7 @@
       h3 {
         margin: 0;
         font-family: "Fraunces", Georgia, serif;
-        font-weight: 650;
+        font-weight: 750;
         letter-spacing: 0;
       }
 
@@ -94,948 +110,1086 @@
         margin-inline: auto;
       }
 
-      .header {
+      .skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 100;
+        border-radius: 999px;
+        background: var(--ink);
+        color: var(--white);
+        padding: 10px 16px;
+        font-weight: 900;
+        transform: translateY(-150%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-header {
         position: sticky;
         top: 0;
-        z-index: 20;
-        border-bottom: 1px solid var(--border);
-        background: rgba(255, 253, 251, 0.9);
+        z-index: 50;
+        border-bottom: 1px solid rgba(216, 235, 241, 0.92);
+        background: rgba(255, 255, 255, 0.88);
         backdrop-filter: blur(18px);
-        box-shadow: 0 10px 34px rgba(93, 59, 55, 0.06);
+        box-shadow: 0 12px 38px rgba(18, 54, 90, 0.06);
       }
 
       .header-inner {
-        display: flex;
-        min-height: 88px;
+        display: grid;
+        min-height: 78px;
         align-items: center;
-        justify-content: space-between;
-        gap: 22px;
+        gap: 18px;
+        padding-block: 12px;
+      }
+
+      .header-inner > *,
+      .hero-grid > *,
+      .world-grid > *,
+      .book-shelf > *,
+      .reason-grid > *,
+      .project-grid > *,
+      .footer-grid > * {
+        min-width: 0;
       }
 
       .brand {
         display: inline-flex;
+        width: fit-content;
         align-items: center;
         gap: 12px;
         font-family: "Fraunces", Georgia, serif;
-        color: var(--text);
-        font-size: 1.32rem;
-        font-weight: 650;
+        font-size: 1.15rem;
+        font-weight: 750;
         line-height: 1;
       }
 
       .brand-mark {
         display: grid;
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
         place-items: center;
-        border: 1px solid var(--border);
-        border-radius: 999px;
+        border: 1px solid rgba(124, 200, 231, 0.45);
+        border-radius: 50%;
         background:
-          radial-gradient(circle, rgba(255, 255, 255, 0.94) 0 46%, rgba(255, 239, 240, 0.92) 48% 100%);
-        color: var(--primary);
+          radial-gradient(circle, rgba(255, 255, 255, 0.96) 0 45%, rgba(223, 244, 255, 0.9) 46% 100%);
+        color: var(--coral);
         box-shadow:
-          0 10px 26px rgba(185, 52, 81, 0.1),
-          inset 0 0 0 8px rgba(255, 244, 244, 0.75);
+          0 12px 28px rgba(40, 185, 176, 0.14),
+          inset 0 0 0 8px rgba(255, 255, 255, 0.62);
       }
 
-      .nav,
-      .social {
-        display: flex;
+      .brand-mark svg {
+        width: 23px;
+        height: 23px;
+      }
+
+      .brand small {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-family: "Nunito", system-ui, sans-serif;
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: grid;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         align-items: center;
-        gap: 24px;
+        gap: 8px;
       }
 
       .nav a {
         position: relative;
         border-radius: 999px;
-        color: #4d3734;
-        font-size: 0.92rem;
-        font-weight: 800;
+        color: var(--ink-soft);
+        padding: 8px 7px;
+        font-size: 0.8rem;
+        font-weight: 900;
+        min-width: 0;
+        text-align: center;
+        overflow-wrap: anywhere;
       }
 
       .nav a:hover,
       .nav a.active {
-        color: var(--primary);
-      }
-
-      .nav a.active::after {
-        position: absolute;
-        right: 14%;
-        bottom: -14px;
-        left: 14%;
-        height: 2px;
-        border-radius: 999px;
-        background: linear-gradient(90deg, transparent, var(--primary), transparent);
-        content: "";
+        background: rgba(223, 244, 255, 0.7);
+        color: var(--turquoise-dark);
       }
 
       .social {
+        display: none;
+        align-items: center;
         gap: 8px;
       }
 
       .social a {
         display: grid;
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
         place-items: center;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        background: rgba(255, 253, 251, 0.88);
-        color: var(--primary);
-        font-size: 0.78rem;
-        font-weight: 900;
-        box-shadow: 0 8px 20px rgba(185, 52, 81, 0.07);
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--ink);
+      }
+
+      .social a:hover {
+        border-color: rgba(255, 111, 97, 0.38);
+        color: var(--coral-dark);
+        transform: translateY(-2px);
       }
 
       .social svg {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
       }
 
-      .social a:hover,
-      .button:hover {
-        transform: translateY(-2px);
+      main {
+        overflow: hidden;
       }
 
       .hero {
         position: relative;
-        overflow: hidden;
-        border-bottom: 1px solid rgba(239, 208, 207, 0.82);
-        background:
-          linear-gradient(90deg, rgba(255, 253, 251, 0.96), rgba(255, 248, 246, 0.72)),
-          radial-gradient(circle at 5% 92%, rgba(245, 169, 184, 0.22), transparent 22rem);
-        padding: 62px 0 0;
-      }
-
-      .hero::before,
-      .hero::after {
-        position: absolute;
-        color: var(--gold);
-        font-family: "Fraunces", Georgia, serif;
-        pointer-events: none;
+        padding: 48px 0 34px;
       }
 
       .hero::before {
-        top: 108px;
-        left: max(1rem, calc((100vw - 1180px) / 2));
-        content: "✦";
-        font-size: 1.35rem;
-      }
-
-      .hero::after {
-        right: max(2rem, calc((100vw - 1180px) / 2 + 3rem));
-        bottom: 92px;
-        content: "☾";
-        font-size: 2rem;
-        opacity: 0.72;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          radial-gradient(circle at 16% 78%, rgba(255, 111, 97, 0.08), transparent 18rem),
+          radial-gradient(circle at 82% 30%, rgba(155, 200, 165, 0.17), transparent 20rem);
+        content: "";
       }
 
       .hero-grid {
         display: grid;
         align-items: center;
-        gap: 52px;
-        grid-template-columns: 0.95fr 1.05fr;
+        gap: 34px;
       }
 
-      .hero-grid > *,
-      .product-grid > * {
-        min-width: 0;
-      }
-
-      .eyebrow,
-      .pill {
+      .kicker {
         display: inline-flex;
         align-items: center;
-        border: 1px solid var(--border);
+        gap: 8px;
+        border: 1px solid rgba(231, 182, 91, 0.5);
         border-radius: 999px;
-        background: var(--surface);
-        color: var(--primary);
-        font-size: 0.92rem;
+        background: rgba(255, 244, 207, 0.68);
+        color: var(--ink);
+        padding: 9px 14px;
+        font-size: 0.82rem;
         font-weight: 900;
-        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
       }
 
-      .eyebrow {
-        margin-bottom: 20px;
-        padding: 9px 15px;
-        background: rgba(255, 253, 251, 0.8);
+      .kicker svg {
+        width: 16px;
+        color: var(--gold);
       }
 
       .hero h1 {
-        max-width: 650px;
-        font-size: clamp(2.35rem, 4.4vw, 4rem);
-        line-height: 1.06;
+        max-width: 720px;
+        margin-top: 18px;
+        font-size: clamp(3.1rem, 11vw, 6.2rem);
+        line-height: 0.92;
+        text-transform: uppercase;
+        overflow-wrap: break-word;
       }
 
-      .hero-copy {
-        max-width: 560px;
-        margin-top: 24px;
-        color: var(--muted);
-        font-size: 1.15rem;
-        line-height: 1.75;
+      .hero h1 span {
+        color: var(--turquoise-dark);
       }
 
-      .button-row {
+      .hero-subtitle {
+        max-width: 600px;
+        margin-top: 22px;
+        color: var(--ink-soft);
+        font-size: clamp(1.12rem, 2.6vw, 1.45rem);
+        font-weight: 800;
+        line-height: 1.55;
+      }
+
+      .hero-actions,
+      .section-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 32px;
+        margin-top: 28px;
       }
 
       .button {
         display: inline-flex;
-        min-height: 54px;
+        width: 100%;
+        min-height: 48px;
         align-items: center;
         justify-content: center;
+        gap: 8px;
         border: 1px solid transparent;
         border-radius: 999px;
-        padding: 14px 26px;
-        background: linear-gradient(135deg, var(--primary), #e96f85);
-        color: white;
-        font-size: 1rem;
+        background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+        color: var(--white);
+        padding: 13px 23px;
         font-weight: 900;
-        box-shadow: 0 16px 38px rgba(185, 52, 81, 0.17);
+        box-shadow: 0 16px 36px rgba(255, 111, 97, 0.24);
       }
 
       .button:hover {
-        background: var(--primary-dark);
-        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 22px 46px rgba(255, 111, 97, 0.28);
       }
 
       .button.secondary {
-        border-color: var(--border);
-        background: var(--surface);
-        color: var(--primary);
-        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+        border-color: rgba(40, 185, 176, 0.34);
+        background: rgba(255, 255, 255, 0.86);
+        color: var(--turquoise-dark);
+        box-shadow: 0 12px 28px rgba(18, 54, 90, 0.06);
       }
 
-      .button.secondary:hover {
-        border-color: var(--accent);
-        background: var(--surface);
+      .button svg {
+        width: 17px;
+        height: 17px;
       }
 
-      .hero-image-wrap {
-        position: relative;
-        width: 100%;
-        max-width: 720px;
-        margin-inline: auto;
-      }
-
-      .hero-image-card {
-        border: 0;
-        border-radius: 0;
-        background: transparent;
-        padding: 0;
-        box-shadow: none;
-      }
-
-      .hero-image {
-        aspect-ratio: 1.34;
-        overflow: hidden;
-        border-radius: 0;
-        background: transparent;
-      }
-
-      .hero-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center bottom;
-      }
-
-      .floating-label {
-        position: absolute;
-        right: 10%;
-        top: 20px;
-        z-index: 2;
-        border-radius: 999px;
-        border: 1px solid rgba(239, 208, 207, 0.86);
-        background: rgba(255, 253, 251, 0.78);
-        padding: 10px 16px;
-        color: var(--primary);
-        font-size: 0.9rem;
-        font-weight: 900;
-        box-shadow: 0 18px 42px rgba(93, 59, 55, 0.09);
-      }
-
-      .benefits {
-        background: linear-gradient(180deg, rgba(255, 240, 239, 0.7), rgba(255, 253, 251, 0.7));
-        padding: 0 0 46px;
-      }
-
-      .benefit-grid {
-        display: grid;
-        gap: 0;
-        grid-template-columns: repeat(4, 1fr);
-        border: 0;
-        border-radius: 0;
-        background: rgba(255, 253, 251, 0.72);
-        box-shadow: 0 12px 32px rgba(93, 59, 55, 0.06);
-      }
-
-      .benefit {
-        display: grid;
-        min-height: 160px;
-        gap: 8px;
-        align-content: center;
-        justify-items: center;
-        border-left: 1px solid rgba(239, 208, 207, 0.78);
-        padding: 24px 20px 22px;
-        text-align: center;
-      }
-
-      .benefit:first-child {
-        border-left: 0;
-      }
-
-      .benefit-icon {
-        display: block;
-        width: 96px;
-        height: 74px;
-        object-fit: contain;
-        object-position: center bottom;
-        opacity: 0.92;
-      }
-
-      .benefit h3 {
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.18rem;
-        font-weight: 650;
-        line-height: 1.16;
-      }
-
-      .benefit p {
-        margin-top: 4px;
-        color: var(--muted);
-        font-size: 0.92rem;
-        line-height: 1.55;
-      }
-
-      section {
-        position: relative;
-        padding: 70px 0;
-        scroll-margin-top: 112px;
-      }
-
-      .section-title {
-        max-width: 780px;
-        margin: 0 auto 46px;
-        text-align: center;
-      }
-
-      .section-title .pill {
-        margin-bottom: 16px;
-        padding: 10px 16px;
-      }
-
-      .section-title h2 {
-        display: block;
-        color: var(--text);
-        font-size: clamp(2rem, 4vw, 2.65rem);
-        line-height: 1.15;
-      }
-
-      .section-title h2::after {
-        display: block;
-        width: 148px;
-        height: 1px;
-        margin: 18px auto 0;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        content: "";
-      }
-
-      .section-title p {
-        max-width: 660px;
-        margin: 20px auto 0;
-        color: var(--muted);
-        font-size: 1.08rem;
-        line-height: 1.7;
-      }
-
-      .freebie-grid {
-        display: grid;
-        gap: 26px;
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .freebie-card,
-      .why-card,
-      .product {
-        border: 1px solid var(--border);
-        background: rgba(255, 253, 251, 0.88);
-        box-shadow: 0 12px 32px rgba(93, 59, 55, 0.07);
-      }
-
-      .freebie-card {
+      .hero-note {
         display: flex;
-        overflow: hidden;
-        flex-direction: column;
-        border-radius: 22px;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 28px;
+        color: var(--muted);
+        font-weight: 800;
       }
 
-      .freebie-card:hover,
-      .product:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 24px 54px rgba(93, 59, 55, 0.13);
+      .hero-note img {
+        width: 54px;
+        height: 54px;
+        border: 3px solid var(--white);
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: var(--soft-shadow);
       }
 
-      .freebie-image {
+      .hero-art {
         position: relative;
-        aspect-ratio: 1;
-        overflow: hidden;
-        border-bottom: 1px solid var(--border);
-        background: linear-gradient(180deg, #fff7f5, #fffdfb);
+        min-height: 430px;
+        border: 1px solid rgba(216, 235, 241, 0.86);
+        border-radius: 32px;
+        background:
+          radial-gradient(circle at 50% 24%, rgba(124, 200, 231, 0.28), transparent 15rem),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 251, 255, 0.92));
+        box-shadow: var(--shadow);
       }
 
-      .freebie-image img {
+      .book-stage {
+        position: absolute;
+        right: 50%;
+        bottom: 22px;
+        width: min(92%, 520px);
+        height: 250px;
+        transform: translateX(50%);
+      }
+
+      .open-book {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 210px;
+        filter: drop-shadow(0 24px 28px rgba(18, 54, 90, 0.18));
+      }
+
+      .book-page {
+        position: absolute;
+        bottom: 18px;
+        width: 50%;
+        height: 150px;
+        border: 1px solid rgba(216, 184, 130, 0.42);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 238, 0.94)),
+          repeating-linear-gradient(0deg, transparent 0 18px, rgba(18, 54, 90, 0.06) 19px 20px);
+      }
+
+      .book-page.left {
+        left: 0;
+        border-radius: 82% 12% 18% 18% / 58% 18% 18% 18%;
+        transform: skewY(4deg);
+      }
+
+      .book-page.right {
+        right: 0;
+        border-radius: 12% 82% 18% 18% / 18% 58% 18% 18%;
+        transform: skewY(-4deg);
+      }
+
+      .book-spine {
+        position: absolute;
+        right: 49%;
+        bottom: 28px;
+        width: 14px;
+        height: 154px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, rgba(231, 182, 91, 0.82), rgba(255, 111, 97, 0.52));
+        transform: translateX(50%);
+      }
+
+      .world-orbit {
+        position: absolute;
+        inset: 0;
+      }
+
+      .world-bubble {
+        position: absolute;
+        overflow: hidden;
+        border: 5px solid var(--white);
+        border-radius: 28px;
+        background: var(--white);
+        box-shadow: var(--soft-shadow);
+        animation: floaty 6s ease-in-out infinite;
+      }
+
+      .world-bubble img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
 
-      .badge {
+      .world-bubble.brombeer {
+        top: 94px;
+        left: 10px;
+        width: 96px;
+        height: 96px;
+      }
+
+      .world-bubble.lio {
+        top: 18px;
+        left: 104px;
+        width: 108px;
+        height: 108px;
+        animation-delay: -1s;
+      }
+
+      .world-bubble.flunker {
+        top: 34px;
+        right: 28px;
+        width: 112px;
+        height: 112px;
+        animation-delay: -2s;
+      }
+
+      .world-bubble.malbuch {
+        right: 10px;
+        bottom: 82px;
+        width: 88px;
+        height: 88px;
+        animation-delay: -3s;
+      }
+
+      .fluse-hero {
         position: absolute;
-        left: 16px;
-        top: 16px;
-        border-radius: 999px;
-        border: 1px solid rgba(239, 208, 207, 0.86);
-        background: rgba(255, 253, 251, 0.9);
-        padding: 7px 12px;
-        color: var(--primary);
-        font-size: 0.75rem;
+        right: -4px;
+        bottom: 130px;
+        width: min(40vw, 155px);
+        border-radius: 32px;
+        filter: drop-shadow(0 18px 24px rgba(18, 54, 90, 0.18));
+        animation: floaty 6.4s ease-in-out infinite;
+      }
+
+      .spark {
+        position: absolute;
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        color: var(--gold);
+        animation: twinkle 2.8s ease-in-out infinite;
+      }
+
+      .spark.one {
+        top: 36px;
+        left: 36px;
+      }
+
+      .spark.two {
+        top: 178px;
+        right: 36px;
+        animation-delay: -1s;
+      }
+
+      .spark.three {
+        right: 218px;
+        bottom: 88px;
+        color: var(--turquoise);
+        animation-delay: -1.7s;
+      }
+
+      .wave-divider {
+        height: 58px;
+        background:
+          radial-gradient(60% 140% at 50% -10%, transparent 57%, #ffffff 58%),
+          linear-gradient(180deg, rgba(223, 244, 255, 0.46), #ffffff);
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .section-heading {
+        max-width: 740px;
+        margin: 0 auto 30px;
+        text-align: center;
+      }
+
+      .section-heading .eyebrow {
+        color: var(--coral-dark);
+        font-size: 0.83rem;
         font-weight: 900;
-        box-shadow: 0 8px 24px rgba(185, 52, 81, 0.08);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
       }
 
-      .freebie-body {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        padding: 24px 22px 22px;
-      }
-
-      .subtitle {
-        color: var(--primary);
-        font-size: 0.92rem;
-        font-weight: 900;
-      }
-
-      .freebie-card h3 {
+      .section-heading h2 {
         margin-top: 8px;
-        font-size: 1.55rem;
-        line-height: 1.18;
+        font-size: clamp(2.1rem, 7vw, 4rem);
+        line-height: 1.05;
       }
 
-      .freebie-card p,
-      .product p {
+      .section-heading p {
+        margin-top: 12px;
         color: var(--muted);
-        line-height: 1.65;
+        font-size: 1.05rem;
+        font-weight: 800;
+        line-height: 1.7;
       }
 
-      .teaser-box {
-        margin-top: 16px;
-        border: 1px solid rgba(239, 208, 207, 0.68);
-        border-radius: 16px;
-        background: rgba(255, 240, 239, 0.62);
-        padding: 12px 14px;
-        color: var(--text);
-        font-size: 0.92rem;
+      .worlds {
+        background: var(--white);
+      }
+
+      .world-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .world-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 420px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--white);
+        box-shadow: var(--soft-shadow);
+      }
+
+      .world-card::before {
+        position: absolute;
+        inset: 0;
+        opacity: 0.82;
+        content: "";
+      }
+
+      .world-card.sage::before {
+        background: linear-gradient(180deg, rgba(155, 200, 165, 0.22), rgba(255, 255, 255, 0) 50%);
+      }
+
+      .world-card.sky::before {
+        background: linear-gradient(180deg, rgba(124, 200, 231, 0.25), rgba(255, 255, 255, 0) 50%);
+      }
+
+      .world-card.gold::before {
+        background: linear-gradient(180deg, rgba(231, 182, 91, 0.24), rgba(255, 255, 255, 0) 50%);
+      }
+
+      .world-card.coral::before {
+        background: linear-gradient(180deg, rgba(255, 111, 97, 0.16), rgba(255, 255, 255, 0) 52%);
+      }
+
+      .world-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 24px 58px rgba(18, 54, 90, 0.14);
+      }
+
+      .world-media {
+        position: relative;
+        margin: 18px 18px 0;
+        overflow: hidden;
+        aspect-ratio: 1.06;
+        border-radius: 24px;
+        background: var(--cloud);
+      }
+
+      .world-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 240ms ease;
+      }
+
+      .world-card:hover .world-media img {
+        transform: scale(1.04);
+      }
+
+      .world-content {
+        position: relative;
+        padding: 20px 22px 24px;
+      }
+
+      .world-icon {
+        display: inline-grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        margin-bottom: 12px;
+        border-radius: 50%;
+        background: var(--white);
+        box-shadow: 0 10px 24px rgba(18, 54, 90, 0.08);
+      }
+
+      .world-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .world-card h3 {
+        font-size: 1.45rem;
+        line-height: 1.12;
+      }
+
+      .world-card p {
+        margin-top: 10px;
+        color: var(--muted);
         font-weight: 800;
         line-height: 1.55;
       }
 
-      .freebie-card .button {
-        width: 100%;
-        margin-top: auto;
+      .world-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 18px;
+        color: var(--turquoise-dark);
+        font-weight: 900;
       }
 
-      .product-list {
-        display: grid;
-        gap: 28px;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      }
-
-      .product {
-        overflow: hidden;
-        border-radius: 22px;
-        transition:
-          box-shadow 180ms ease,
-          transform 180ms ease;
-      }
-
-      .product-grid {
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-      }
-
-      .product:nth-child(even) .product-media {
-        order: 0;
-      }
-
-      .product-media {
-        border-bottom: 1px solid var(--border);
+      .featured {
+        position: relative;
         background:
-          linear-gradient(180deg, rgba(255, 240, 239, 0.76), rgba(255, 253, 251, 0.95));
-        padding: 14px;
+          radial-gradient(circle at 10% 20%, rgba(223, 244, 255, 0.78), transparent 18rem),
+          radial-gradient(circle at 86% 24%, rgba(255, 244, 207, 0.72), transparent 18rem),
+          linear-gradient(180deg, #ffffff, #f6fbff);
       }
 
-      .product-image {
+      .book-shelf {
         display: grid;
-        min-height: 0;
-        aspect-ratio: 1;
-        place-items: center;
-        overflow: hidden;
-        border-radius: 18px;
-        background: rgba(255, 253, 251, 0.78);
+        gap: 24px;
       }
 
-      .product-image img {
+      .book-card {
+        position: relative;
+        display: grid;
+        gap: 16px;
+        align-items: end;
+      }
+
+      .book-cover {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 0.78;
+        border-radius: 20px;
+        background: var(--white);
+        box-shadow:
+          0 30px 46px rgba(18, 54, 90, 0.16),
+          12px 0 0 rgba(18, 54, 90, 0.08);
+        transform-origin: center bottom;
+      }
+
+      .book-cover::after {
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 18px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45));
+        content: "";
+      }
+
+      .book-cover img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        transition: transform 260ms ease;
       }
 
-      .product-content {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 22px;
+      .book-card:hover .book-cover {
+        transform: translateY(-8px) rotate(-1.5deg);
       }
 
-      .mini-row {
-        display: block;
+      .book-card:hover .book-cover img {
+        transform: scale(1.035);
       }
 
-      .mini-cover {
-        display: none;
+      .book-info {
+        min-height: 142px;
+        border: 1px solid rgba(216, 235, 241, 0.94);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 18px;
+        box-shadow: 0 10px 28px rgba(18, 54, 90, 0.07);
       }
 
-      .mini-cover img {
+      .book-info h3 {
+        font-family: "Nunito", system-ui, sans-serif;
+        font-size: 1.02rem;
+        font-weight: 900;
+        line-height: 1.2;
+      }
+
+      .book-info p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.94rem;
+        font-weight: 800;
+        line-height: 1.5;
+      }
+
+      .book-info a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 14px;
+        color: var(--coral-dark);
+        font-size: 0.92rem;
+        font-weight: 900;
+      }
+
+      .why {
+        background: var(--white);
+      }
+
+      .reason-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .reason-card {
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 14px;
+        align-items: start;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.88);
+        padding: 18px;
+        box-shadow: 0 10px 28px rgba(18, 54, 90, 0.06);
+      }
+
+      .reason-icon {
+        display: grid;
+        width: 54px;
+        height: 54px;
+        place-items: center;
+        border-radius: 18px;
+        background: var(--cloud);
+        color: var(--turquoise-dark);
+      }
+
+      .reason-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .reason-card h3 {
+        font-family: "Nunito", system-ui, sans-serif;
+        font-size: 1.05rem;
+        font-weight: 900;
+      }
+
+      .reason-card p {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 0.94rem;
+        font-weight: 800;
+        line-height: 1.55;
+      }
+
+      .author {
+        background:
+          linear-gradient(135deg, rgba(223, 244, 255, 0.72), rgba(255, 255, 255, 0.94) 48%, rgba(155, 200, 165, 0.18)),
+          var(--cloud);
+      }
+
+      .author-panel {
+        position: relative;
+        display: grid;
+        gap: 22px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: clamp(24px, 5vw, 46px);
+        box-shadow: var(--shadow);
+      }
+
+      .author-panel::after {
+        position: absolute;
+        right: -28px;
+        bottom: -36px;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: rgba(231, 182, 91, 0.12);
+        content: "";
+      }
+
+      .author-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .author-copy h2 {
+        font-size: clamp(2rem, 7vw, 3.7rem);
+        line-height: 1.05;
+      }
+
+      .author-copy p {
+        max-width: 780px;
+        margin-top: 14px;
+        color: var(--ink-soft);
+        font-size: 1.04rem;
+        font-weight: 800;
+        line-height: 1.75;
+      }
+
+      .author-mascot {
+        position: relative;
+        z-index: 1;
+        justify-self: center;
+        width: min(70vw, 260px);
+        border-radius: 32px;
+        filter: drop-shadow(0 22px 28px rgba(18, 54, 90, 0.12));
+      }
+
+      .projects {
+        background: var(--white);
+      }
+
+      .project-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--white);
+        box-shadow: var(--soft-shadow);
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 52px rgba(18, 54, 90, 0.13);
+      }
+
+      .project-thumb {
+        aspect-ratio: 1.55;
+        overflow: hidden;
+        background: var(--cloud);
+      }
+
+      .project-thumb img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
 
-      .mini-badge {
+      .project-body {
+        padding: 22px;
+      }
+
+      .tag {
         display: inline-flex;
         border-radius: 999px;
-        border: 1px solid rgba(212, 163, 95, 0.42);
-        background: rgba(255, 247, 234, 0.92);
+        background: rgba(223, 244, 255, 0.92);
+        color: var(--turquoise-dark);
         padding: 7px 12px;
-        color: var(--primary-dark);
         font-size: 0.78rem;
         font-weight: 900;
       }
 
-      .product h3 {
+      .project-body h3 {
         margin-top: 14px;
-        font-size: clamp(1.45rem, 2vw, 1.78rem);
-        line-height: 1.15;
+        font-size: 1.48rem;
       }
 
-      .product-desc {
-        margin-top: 12px;
-        font-size: 0.98rem;
-      }
-
-      .product-teaser {
-        margin-top: 18px;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        background: rgba(255, 240, 239, 0.58);
-        padding: 10px;
-      }
-
-      .product-teaser-grid {
-        display: grid;
-        align-items: center;
-        gap: 10px;
-        grid-template-columns: 68px 1fr;
-      }
-
-      .teaser-image {
-        aspect-ratio: 1;
-        overflow: hidden;
-        border-radius: 12px;
-        background: var(--surface);
-      }
-
-      .teaser-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .teaser-label {
-        color: var(--primary);
-        font-size: 0.68rem;
-        font-weight: 900;
-        text-transform: uppercase;
-      }
-
-      .product-teaser p {
-        margin-top: 4px;
-        color: var(--text);
-        font-size: 0.88rem;
-        font-weight: 800;
-        line-height: 1.42;
-      }
-
-      .highlight-list {
-        display: grid;
-        gap: 9px;
-        margin: 18px 0 18px;
-        padding: 0;
-        list-style: none;
-      }
-
-      .highlight-list li {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-        color: var(--text);
-        font-size: 0.88rem;
-        font-weight: 900;
-      }
-
-      .check {
-        display: grid;
-        width: 23px;
-        height: 23px;
-        flex: 0 0 auto;
-        place-items: center;
-        border-radius: 999px;
-        background: rgba(255, 240, 239, 0.92);
-        color: var(--primary);
-      }
-
-      .product .button {
-        width: 100%;
-        margin-top: auto;
-      }
-
-      .why-card .benefit-icon,
-      .magic-grid .benefit-icon {
-        display: grid;
-        width: 48px;
-        height: 48px;
-        place-items: center;
-        border-radius: 999px;
-        background: var(--surface-soft);
-        color: var(--primary);
-        font-weight: 900;
-      }
-
-      .why-grid {
-        display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(3, 1fr);
-        margin-top: 40px;
-      }
-
-      .magic-grid {
-        display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .why-card {
-        border-radius: 28px;
-        padding: 28px;
-        scroll-margin-top: 112px;
-      }
-
-      .why-card h3 {
-        margin-top: 16px;
-        font-size: 1.55rem;
-      }
-
-      .why-card p {
+      .project-body p {
         margin-top: 10px;
         color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .popup-fallback {
-        width: min(92vw, 460px);
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        background: var(--surface);
-        color: var(--text);
-        padding: 28px;
-        box-shadow: 0 24px 70px rgba(185, 52, 81, 0.24);
-      }
-
-      .popup-fallback::backdrop {
-        background: rgba(61, 47, 50, 0.28);
-        backdrop-filter: blur(8px);
-      }
-
-      .popup-fallback h2 {
-        font-size: 1.7rem;
-      }
-
-      .popup-fallback p {
-        margin-top: 12px;
-        color: var(--muted);
+        font-weight: 800;
         line-height: 1.6;
       }
 
-      .popup-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 20px;
-      }
-
-      .popup-actions button {
-        min-height: 48px;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        background: var(--surface);
-        color: var(--primary);
-        padding: 0 20px;
-        font: inherit;
+      .project-body a {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 18px;
+        color: var(--coral-dark);
         font-weight: 900;
       }
 
-      .footer {
-        border-top: 1px solid var(--border);
-        background: var(--surface-soft);
+      .site-footer {
+        border-top: 1px solid var(--line);
+        background:
+          radial-gradient(circle at 10% 10%, rgba(124, 200, 231, 0.18), transparent 16rem),
+          linear-gradient(180deg, #f7fcff, #ffffff);
       }
 
       .footer-grid {
         display: grid;
-        gap: 40px;
-        grid-template-columns: 1.2fr 0.8fr 0.8fr;
-        padding: 48px 0;
+        gap: 28px;
+        padding: 44px 0 30px;
       }
 
-      .footer h2 {
+      .footer-brand {
+        display: grid;
+        gap: 14px;
+      }
+
+      .footer-brand img {
+        width: 92px;
+        border-radius: 24px;
+      }
+
+      .footer-brand h2 {
         font-size: 2rem;
       }
 
-      .footer p {
-        max-width: 420px;
-        margin-top: 14px;
+      .footer-brand p {
+        max-width: 390px;
         color: var(--muted);
+        font-weight: 800;
         line-height: 1.65;
-      }
-
-      .footer h3 {
-        font-family: "Nunito", system-ui, sans-serif;
-        color: var(--primary);
-        font-size: 0.86rem;
-        font-weight: 900;
-        text-transform: uppercase;
       }
 
       .footer-links {
         display: grid;
-        gap: 12px;
-        margin-top: 16px;
+        gap: 10px;
       }
 
-      .footer-links a {
-        color: var(--muted);
-        font-weight: 800;
-      }
-
-      .legal-card {
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        background: var(--surface);
-        padding: clamp(24px, 4vw, 42px);
-        box-shadow: 0 18px 55px rgba(185, 52, 81, 0.13);
-      }
-
-      .legal-card h2 {
-        font-size: clamp(2rem, 4vw, 2.6rem);
-      }
-
-      .legal-grid {
-        display: grid;
-        gap: 24px;
-        grid-template-columns: 0.9fr 1.1fr;
-        margin-top: 24px;
-      }
-
-      .legal-card h3 {
-        margin-top: 4px;
+      .footer-links h3 {
         font-family: "Nunito", system-ui, sans-serif;
-        color: var(--primary);
+        color: var(--ink);
         font-size: 0.9rem;
         font-weight: 900;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
-      .legal-card p,
-      .legal-card address {
-        margin-top: 10px;
+      .footer-links a {
+        width: fit-content;
         color: var(--muted);
-        font-style: normal;
-        line-height: 1.7;
-      }
-
-      .legal-card a {
-        color: var(--primary);
         font-weight: 900;
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-underline-offset: 4px;
       }
 
-      .copyright {
-        border-top: 1px solid var(--border);
-        padding: 20px 0;
+      .footer-links a:hover {
+        color: var(--coral-dark);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid var(--line);
+        padding: 18px 0 22px;
         color: var(--muted);
         font-size: 0.92rem;
         font-weight: 800;
       }
 
-      @media (max-width: 980px) {
-        .header-inner {
-          align-items: flex-start;
-          flex-direction: column;
-          padding: 16px 0;
+      @keyframes floaty {
+        0%,
+        100% {
+          transform: translateY(0);
         }
 
-        .nav,
-        .social {
-          width: 100%;
-          max-width: 100%;
-          min-width: 0;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-        }
-
-        .hero-grid,
-        .product-grid,
-        .footer-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .product:nth-child(even) .product-media {
-          order: 0;
-        }
-
-        .benefit-grid,
-        .freebie-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .legal-grid,
-        .why-grid,
-        .magic-grid {
-          grid-template-columns: 1fr;
+        50% {
+          transform: translateY(-9px);
         }
       }
 
-      @media (max-width: 640px) {
-        .container {
-          width: calc(100% - 1.25rem);
-          max-width: 1180px;
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.45;
+          transform: scale(0.85) rotate(0deg);
         }
 
-        .brand {
-          font-size: 1.05rem;
+        50% {
+          opacity: 1;
+          transform: scale(1.12) rotate(12deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+
+      @media (min-width: 680px) {
+        .header-inner {
+          grid-template-columns: auto 1fr;
         }
 
         .nav {
-          display: grid;
-          gap: 10px 12px;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          display: flex;
+          width: auto;
+          flex-wrap: wrap;
+          justify-content: end;
         }
 
         .nav a {
-          min-width: 0;
-          font-size: 0.84rem;
-          line-height: 1.2;
-          overflow-wrap: break-word;
+          padding: 8px 11px;
+          font-size: 0.88rem;
         }
 
-        .nav a.active::after {
-          display: none;
+        .button {
+          width: auto;
+        }
+
+        .world-grid,
+        .project-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .book-shelf {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .reason-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer-grid {
+          grid-template-columns: 1.3fr 0.8fr 0.8fr;
+        }
+      }
+
+      @media (min-width: 960px) {
+        .header-inner {
+          grid-template-columns: auto 1fr auto;
+        }
+
+        .social {
+          display: flex;
         }
 
         .hero {
-          padding-top: 32px;
+          padding: 74px 0 44px;
         }
 
-        .hero h1 {
-          max-width: 340px;
-          font-size: clamp(1.95rem, 7.5vw, 2.2rem);
-          overflow-wrap: anywhere;
-          hyphens: auto;
+        .hero-grid {
+          grid-template-columns: minmax(0, 0.92fr) minmax(430px, 1.08fr);
+          gap: 52px;
         }
 
-        .hero-copy {
-          max-width: 340px;
-          font-size: 1.03rem;
-          overflow-wrap: break-word;
+        .hero-art {
+          min-height: 575px;
         }
 
-        .hero-image-wrap {
-          max-width: 100%;
-          overflow: hidden;
+        .fluse-hero {
+          width: 240px;
+          right: 26px;
+          bottom: 160px;
         }
 
-        .floating-label {
-          right: auto;
-          left: 50%;
-          max-width: calc(100% - 1rem);
-          transform: translateX(-50%);
-          white-space: nowrap;
-          font-size: 0.78rem;
+        .world-bubble.brombeer {
+          width: 116px;
+          height: 116px;
         }
 
-        .button-row,
-        .button {
-          width: 100%;
+        .world-bubble.lio {
+          left: 118px;
+          width: 128px;
+          height: 128px;
         }
 
-        .button-row {
-          max-width: 350px;
+        .world-bubble.flunker {
+          right: 52px;
+          width: 136px;
+          height: 136px;
         }
 
-        .benefit-grid,
-        .freebie-grid,
-        .product-teaser-grid {
+        .world-bubble.malbuch {
+          right: 0;
+          bottom: 72px;
+          width: 108px;
+          height: 108px;
+        }
+
+        .world-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .book-shelf {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          align-items: end;
+        }
+
+        .book-card:nth-child(2n) {
+          margin-top: 34px;
+        }
+
+        .book-card:nth-child(3n) {
+          margin-top: 18px;
+        }
+
+        .reason-grid {
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+
+        .reason-card {
           grid-template-columns: 1fr;
         }
 
-        .benefit {
-          border-top: 1px solid rgba(239, 208, 207, 0.78);
-          border-left: 0;
+        .author-panel {
+          grid-template-columns: 1fr 270px;
+          align-items: center;
         }
 
-        .benefit:first-child {
-          border-top: 0;
-        }
-
-        .product-content {
-          padding: 26px;
-        }
-
-        .product-image {
-          min-height: 0;
-        }
-
-        .section-title h2 {
-          border-radius: 24px;
+        .project-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
       }
     </style>
   </head>
   <body>
-    <header class="header">
+    <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
+
+    <header class="site-header" id="startseite">
       <div class="container header-inner">
-        <a class="brand" href="#startseite" aria-label="Zauber auf Papier Startseite">
-          <span class="brand-mark" aria-hidden="true">✦</span>
-          <span>Zauber auf Papier</span>
+        <a class="brand" href="index.html" aria-label="Zauber auf Papier Startseite">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2.4l2.6 6.6 7 2.6-7 2.6-2.6 7-2.6-7-7-2.6 7-2.6L12 2.4z" fill="currentColor" />
+            </svg>
+          </span>
+          <span>Zauber auf Papier<small>Kinderbücher & Kreativwelten</small></span>
         </a>
+
         <nav class="nav" aria-label="Hauptnavigation">
           <a class="active" href="index.html">Startseite</a>
           <a href="seiten/funkel-downloads.html">Freebies</a>
@@ -1045,472 +1199,390 @@
           <a href="seiten/geschichtenreich.html">Geschichtenreich</a>
           <a href="seiten/ueber-mich.html">Über mich</a>
         </nav>
-        <div class="social" aria-label="Social Links">
-          <a href="https://www.instagram.com/zauber_auf_papier?igsh=MWM4c21jcXR1cXUzcg==" aria-label="Instagram" title="Instagram" data-popup-link><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.3" fill="currentColor"/></svg></a>
-          <a href="mailto:nickifeller456@gmail.com?subject=Anfrage%20zu%20Zauber%20auf%20Papier" aria-label="Kontakt per E-Mail" title="Kontakt per E-Mail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a href="https://pin.it/42RjLvB2o" aria-label="Pinterest" title="Pinterest" data-popup-link><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-4.1 0-7 2.8-7 6.5 0 2.4 1.4 4.2 3.2 4.2.5 0 .8-.3.7-.8l-.2-.9c-.1-.4-.1-.5.2-.8.5-.6.8-1.3.8-2.2 0-1.7 1.1-3.2 3.3-3.2 1.8 0 2.9 1.1 2.9 2.7 0 2.1-1 3.9-2.4 3.9-.8 0-1.4-.7-1.2-1.5l.5-2c.2-.9-.2-1.6-1-1.6-.8 0-1.5.8-1.5 1.9 0 .7.2 1.2.2 1.2l-1 4.2c-.2.8-.1 1.9 0 2.7.1.2.3.2.4.1.6-.8 1.5-2.1 1.8-3.3l.3-1.2c.4.7 1.2 1.1 2.1 1.1 2.8 0 4.8-2.6 4.8-6 0-2.8-2.4-5.1-5.8-5.1z" fill="currentColor"/></svg></a>
-          <a href="https://www.tiktok.com/@zauberaufpapierx?_r=1&_t=ZG-96r3VpoOtCT" aria-label="TikTok" title="TikTok" data-popup-link><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4c.5 2.6 1.9 4.1 4 4.5v3.2c-1.5-.1-2.8-.6-4-1.5v5.5c0 3-2.1 5.1-5.1 5.1A4.7 4.7 0 0 1 5 16c0-2.8 2.2-4.9 5-4.9.4 0 .8 0 1.1.1v3.3a2.5 2.5 0 0 0-1.1-.2A1.7 1.7 0 0 0 8.2 16c0 1 .8 1.7 1.8 1.7s1.8-.7 1.8-1.9V4h3.2z" fill="currentColor"/></svg></a>
+
+        <div class="social" aria-label="Social Media">
+          <a href="https://www.instagram.com/zauber_auf_papier?igsh=MWM4c21jcXR1cXUzcg==" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="2" />
+              <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2" />
+              <circle cx="17" cy="7" r="1.3" fill="currentColor" />
+            </svg>
+          </a>
+          <a href="mailto:nickifeller456@gmail.com" aria-label="E-Mail">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2" />
+              <path d="M4.8 7.2 12 12.7l7.2-5.5" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </a>
+          <a href="https://pin.it/42RjLvB2o" target="_blank" rel="noopener" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3.5c-4.1 0-7 2.8-7 6.5 0 2.4 1.4 4.2 3.2 4.2.5 0 .8-.3.7-.8l-.2-.9c-.1-.4-.1-.5.2-.8.5-.6.8-1.3.8-2.2 0-1.7 1.1-3.2 3.3-3.2 1.8 0 2.9 1.1 2.9 2.7 0 2.1-1 3.9-2.4 3.9-.8 0-1.4-.7-1.2-1.5l.5-2c.2-.9-.2-1.6-1-1.6-.8 0-1.5.8-1.5 1.9 0 .7.2 1.2.2 1.2l-1 4.2c-.2.8-.1 1.9 0 2.7.1.2.3.2.4.1.6-.8 1.5-2.1 1.8-3.3l.3-1.2c.4.7 1.2 1.1 2.1 1.1 2.8 0 4.8-2.6 4.8-6 0-2.8-2.4-5.1-5.8-5.1z" fill="currentColor" />
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@zauberaufpapierx?_r=1&_t=ZG-96r3VpoOtCT" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 4c.5 2.6 1.9 4.1 4 4.5v3.2c-1.5-.1-2.8-.6-4-1.5v5.5c0 3-2.1 5.1-5.1 5.1A4.7 4.7 0 0 1 5 16c0-2.8 2.2-4.9 5-4.9.4 0 .8 0 1.1.1v3.3a2.5 2.5 0 0 0-1.1-.2A1.7 1.7 0 0 0 8.2 16c0 1 .8 1.7 1.8 1.7s1.8-.7 1.8-1.9V4h3.2z" fill="currentColor" />
+            </svg>
+          </a>
         </div>
       </div>
     </header>
 
-    <main>
-      <section class="hero" id="startseite">
+    <main id="hauptinhalt">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="container hero-grid">
-          <div>
-            <p class="eyebrow">Zauber auf Papier: Malbücher & Gratis-Ebooks</p>
-            <h1>Malbücher und Freebies, die kleine Künstlerherzen zum Leuchten bringen</h1>
-            <p class="hero-copy">
-              Entdecke liebevoll gestaltete Bücher, kreative Gratis-Downloads und bunte
-              Ausmalwelten für Kinder.
-            </p>
-            <div class="button-row">
-              <a class="button" href="seiten/funkel-downloads.html">Freebies downloaden</a>
-              <a class="button secondary" href="seiten/malbuch-schaetze.html">Malbücher entdecken</a>
+          <div class="hero-copy">
+            <span class="kicker">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.5 14.5 9l7 3-7 3-2.5 6.5L9.5 15l-7-3 7-3L12 2.5z" fill="currentColor" />
+              </svg>
+              Moderne Kinderbuchwelten
+            </span>
+            <h1 id="hero-title">ZAUBER AUF <span>PAPIER</span></h1>
+            <p class="hero-subtitle">Kinderbücher voller Fantasie, Abenteuer und Herz.</p>
+            <div class="hero-actions">
+              <a class="button" href="#buecher">
+                Bücher entdecken
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a class="button secondary" href="#buchwelten">Buchwelten ansehen</a>
+            </div>
+            <div class="hero-note">
+              <img src="images/fluse-mini.jpg" alt="Fluse, das kleine Maskottchen von Zauber auf Papier" />
+              <span>Fluse begleitet dich durch die Welt von Geschichten, Rätseln und Kreativität.</span>
             </div>
           </div>
-          <div class="hero-image-wrap">
-            <div class="floating-label">Liebevoll. Magisch. Kreativ.</div>
-            <div class="hero-image-card">
-              <div class="hero-image">
-                <img src="images/home-hero-unicorn.png" alt="Magische Illustration mit Einhorn und offenem Buch" />
+
+          <div class="hero-art" aria-label="Offenes Buch mit Buchwelten und Fluse">
+            <span class="spark one" aria-hidden="true">✦</span>
+            <span class="spark two" aria-hidden="true">✦</span>
+            <span class="spark three" aria-hidden="true">✦</span>
+            <div class="world-orbit" aria-hidden="true">
+              <span class="world-bubble brombeer"><img src="images/home-world-brombeerstadt.jpg" alt="" /></span>
+              <span class="world-bubble lio"><img src="images/home-world-lio.jpg" alt="" /></span>
+              <span class="world-bubble flunker"><img src="images/home-world-flunkerfunken.jpg" alt="" /></span>
+              <span class="world-bubble malbuch"><img src="images/home-world-malbuch.jpg" alt="" /></span>
+            </div>
+            <img class="fluse-hero" src="images/fluse-guide.jpg" alt="Fluse mit Zauberbuch" />
+            <div class="book-stage" aria-hidden="true">
+              <div class="open-book">
+                <span class="book-page left"></span>
+                <span class="book-page right"></span>
+                <span class="book-spine"></span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="benefits">
-        <div class="container benefit-grid">
-          <a class="benefit" href="seiten/malbuch-schaetze.html">
-            <img class="benefit-icon" src="images/home-icon-book.png" alt="" aria-hidden="true" />
-            <div>
-              <h3>Malbücher für Große</h3>
-              <p>Entspannung und Kreativität für deine Auszeit.</p>
-            </div>
-          </a>
-          <a class="benefit" href="seiten/sternenmalerei.html">
-            <img class="benefit-icon" src="images/home-icon-castle.png" alt="" aria-hidden="true" />
-            <div>
-              <h3>Malbuchzauber</h3>
-              <p>Magische Ausmalwelten für kleine Träumer.</p>
-            </div>
-          </a>
-          <a class="benefit" href="seiten/serienzauber.html">
-            <img class="benefit-icon" src="images/home-icon-storybook.png" alt="" aria-hidden="true" />
-            <div>
-              <h3>Serienzauber</h3>
-              <p>Fortlaufende Abenteuer, die verzaubern.</p>
-            </div>
-          </a>
-          <a class="benefit" href="seiten/geschichtenreich.html">
-            <img class="benefit-icon" src="images/home-icon-potion.png" alt="" aria-hidden="true" />
-            <div>
-              <h3>Geschichtenreich</h3>
-              <p>Geschichten, die von Herzen kommen.</p>
-            </div>
-          </a>
-        </div>
-      </div>
+      <div class="wave-divider" aria-hidden="true"></div>
 
-      <section id="gratis-ebooks">
+      <section class="worlds" id="buchwelten" aria-labelledby="worlds-title">
         <div class="container">
-          <div class="section-title">
-            <p class="pill">Kostenlose Downloads</p>
-            <h2>Gratis Ebooks zum Download</h2>
-            <p>Kleine Ausmalwelten zum Herunterladen, Sammeln und direkt Loslegen.</p>
+          <div class="section-heading">
+            <span class="eyebrow">Meine Buchwelten</span>
+            <h2 id="worlds-title">Vier Welten, ein Herz für Geschichten</h2>
+            <p>Jede Reihe hat ihren eigenen Ton: mal beerensüß, mal drachenstark, mal rätselhaft und mal voller Ausmalfreude.</p>
           </div>
-          <div class="freebie-grid">
-            <article class="freebie-card">
-              <div class="freebie-image">
-                <img src="images/tierische-mandala-freunde-freebie.png" alt="Gratis-Ebook Tierische Mandala Freunde von Zauber auf Papier" />
-                <span class="badge">Gratis E-Book</span>
+
+          <div class="world-grid">
+            <article class="world-card sage">
+              <div class="world-media">
+                <img src="images/home-world-brombeerstadt.jpg" alt="Illustration aus der Brombeerstadt-Welt" />
               </div>
-              <div class="freebie-body">
-                <p class="subtitle">5 kostenlose Mandalas zum Ausmalen</p>
-                <h3>Tierische Mandala Freunde</h3>
-                <p>Eule, Löwe, Dino, Einhorn und Hase warten als liebevolle Mandalas auf kleine Künstler.</p>
-                <div class="teaser-box">Ein freundliches Gratis-Ebook für ruhige Ausmalmomente ab 4 Jahren.</div>
-                <a class="button" href="https://drive.google.com/file/d/1bsb30Yv7q_eqgRMGPpCMzJwHOrw5ltkA/view?usp=sharing" data-popup-link>Zum Download</a>
+              <div class="world-content">
+                <span class="world-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 9c-2.2 0-4 1.8-4 4s1.8 4 4 4c1.3 0 2.4-.6 3.1-1.5.7.9 1.8 1.5 3.1 1.5 2.2 0 4-1.8 4-4S15.4 9 13.2 9c-1.3 0-2.4.6-3.1 1.5C9.4 9.6 8.3 9 7 9z" fill="currentColor"/><path d="M13 7c.7-2 2.2-3.2 4.5-3.5.1 2.2-1.1 3.9-3.4 4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <h3>Brombeerstadt</h3>
+                <p>Beerenmagie, kleine Geheimnisse und warme Vorlesemomente für neugierige Kinder.</p>
+                <a class="world-link" href="seiten/geschichtenreich.html">Mehr entdecken →</a>
               </div>
             </article>
 
-            <article class="freebie-card">
-              <div class="freebie-image">
-                <img src="images/wolkenhorn-freebie.png" alt="Gratis-Ebook Wolkenhorn von Zauber auf Papier" />
-                <span class="badge">Gratis E-Book</span>
+            <article class="world-card sky">
+              <div class="world-media">
+                <img src="images/home-world-lio.jpg" alt="Lio Herzfunken mit Drache und Wolken" />
               </div>
-              <div class="freebie-body">
-                <p class="subtitle">Süßer Malspaß für kleine Künstler</p>
+              <div class="world-content">
+                <span class="world-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 20s-8-4.6-8-10.2A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.8C20 15.4 12 20 12 20z" fill="currentColor"/></svg>
+                </span>
+                <h3>Lio Herzfunken</h3>
+                <p>Ein kleiner Drache, ein mutiges Herz und Abenteuer, die Kinder zum Strahlen bringen.</p>
+                <a class="world-link" href="seiten/geschichtenreich.html">Mehr entdecken →</a>
+              </div>
+            </article>
+
+            <article class="world-card gold">
+              <div class="world-media">
+                <img src="images/home-world-flunkerfunken.jpg" alt="Die Flunkerfunken-Bande auf dem magischen Jahrmarkt" />
+              </div>
+              <div class="world-content">
+                <span class="world-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m20 20-4.8-4.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8 10.5h5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+                </span>
+                <h3>Flunkerfunken-Bande</h3>
+                <p>Rätsel, Mut und Freundschaft für kleine Spürnasen mit großen Fragen.</p>
+                <a class="world-link" href="seiten/serienzauber.html">Mehr entdecken →</a>
+              </div>
+            </article>
+
+            <article class="world-card coral">
+              <div class="world-media">
+                <img src="images/home-world-malbuch.jpg" alt="Kreative Ausmalwelt mit süßen Motiven" />
+              </div>
+              <div class="world-content">
+                <span class="world-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m4 20 2.8-.7L18.5 7.6a2 2 0 0 0-2.8-2.8L4 16.5V20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m14.5 6 3.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </span>
+                <h3>Malbücher & Kreatives</h3>
+                <p>Ausmalwelten, Freebies und kreative Pausen für Kinder und große Fantasie.</p>
+                <a class="world-link" href="seiten/sternenmalerei.html">Mehr entdecken →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured" id="buecher" aria-labelledby="books-title">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Beliebte Bücher</span>
+            <h2 id="books-title">Eine Galerie voller Zauber</h2>
+            <p>Große Cover, klare Orientierung und schnelle Wege zu den passenden Buchseiten.</p>
+          </div>
+
+          <div class="book-shelf">
+            <article class="book-card">
+              <a class="book-cover" href="seiten/geschichtenreich.html">
+                <img src="images/home-book-lio.jpg" alt="Lio Herzfunken - Ein Drache hebt ab" />
+              </a>
+              <div class="book-info">
+                <h3>Lio Herzfunken</h3>
+                <p>Zum Vorlesen und Selberlesen mit Drachenmut.</p>
+                <a href="seiten/geschichtenreich.html">Ansehen →</a>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <a class="book-cover" href="seiten/geschichtenreich.html">
+                <img src="images/home-book-zilly.jpg" alt="Zilly Zitro und der Limonadenzauber" />
+              </a>
+              <div class="book-info">
+                <h3>Zilly Zitro</h3>
+                <p>Ein sanftes Abenteuer mit Limonadenmagie.</p>
+                <a href="seiten/geschichtenreich.html">Ansehen →</a>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <a class="book-cover" href="seiten/geschichtenreich.html">
+                <img src="images/home-book-lolle.jpg" alt="Lolle Löckchen und der verschwundene Glitzertag" />
+              </a>
+              <div class="book-info">
+                <h3>Lolle Löckchen</h3>
+                <p>Gefühle verstehen, stärken und gemeinsam wachsen.</p>
+                <a href="seiten/geschichtenreich.html">Ansehen →</a>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <a class="book-cover" href="seiten/geschichtenreich.html">
+                <img src="images/home-book-prinzessin-erdbeerschoen.jpg" alt="Prinzessin Erdbeerschön und der magische Wunschkuchen" />
+              </a>
+              <div class="book-info">
+                <h3>Prinzessin Erdbeerschön</h3>
+                <p>Ein süßer Wunschkuchen für kleine Träumer.</p>
+                <a href="seiten/geschichtenreich.html">Ansehen →</a>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <a class="book-cover" href="seiten/serienzauber.html">
+                <img src="images/home-book-flunkerfunken.jpg" alt="Die Flunkerfunken-Bande - Der Jahrmarkt des Vergessens" />
+              </a>
+              <div class="book-info">
+                <h3>Flunkerfunken-Bande</h3>
+                <p>Magische Rätsel für kleine Spürnasen.</p>
+                <a href="seiten/serienzauber.html">Ansehen →</a>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <a class="book-cover" href="seiten/sternenmalerei.html">
+                <img src="images/home-book-wolkenhorn.jpg" alt="Wolkenhorn Malbuch" />
+              </a>
+              <div class="book-info">
                 <h3>Wolkenhorn</h3>
-                <p>Ein zartes Einhorn-Freebie mit Wolken, Regenbogen und viel Platz zum Träumen.</p>
-                <div class="teaser-box">Ausmalen, träumen, freuen: perfekt für alle, die Einhörner lieben.</div>
-                <a class="button" href="https://drive.google.com/file/d/1lKpibTy2AkcO2PCDa5Ar9-eTRoL4TR90/view?usp=drive_link" data-popup-link>Zum Download</a>
+                <p>Zauberhafte Ausmalbilder mit weichen Linien.</p>
+                <a href="seiten/sternenmalerei.html">Ansehen →</a>
               </div>
             </article>
+          </div>
 
-            <article class="freebie-card">
-              <div class="freebie-image">
-                <img src="images/erdbeerig-schoen-freebie.png" alt="Gratis-Ebook Erdbeerig schön von Zauber auf Papier" />
-                <span class="badge">Gratis E-Book</span>
-              </div>
-              <div class="freebie-body">
-                <p class="subtitle">Süßer Malspaß für kleine Künstler</p>
-                <h3>Erdbeerig schön</h3>
-                <p>Fruchtige Erdbeerwelt mit niedlichen Motiven, einfachen Flächen und einem warmen Look.</p>
-                <div class="teaser-box">Liebevoll, einfach und schnell zum Ausmalen bereit.</div>
-                <a class="button" href="https://drive.google.com/file/d/1T_bBWcawrduaMKJu0Wt-k7ENOAzjWCld/view?usp=sharing" data-popup-link>Zum Download</a>
-              </div>
-            </article>
-
-            <article class="freebie-card">
-              <div class="freebie-image">
-                <img src="images/suesse-leckereien-freebie.png" alt="Gratis-Ebook Süße Leckereien von Zauber auf Papier" />
-                <span class="badge">Gratis E-Book</span>
-              </div>
-              <div class="freebie-body">
-                <p class="subtitle">5 Kawaii Ausmalbilder zum Ausmalen</p>
-                <h3>Süße Leckereien</h3>
-                <p>Donut, Cupcake, Eis, Bonbon und Keks bringen kleine Naschwelten aufs Papier.</p>
-                <div class="teaser-box">Kindgerecht, großflächig und besonders süß gestaltet.</div>
-                <a class="button" href="https://drive.google.com/file/d/14dQmmXiXhI6Png2SZ4A0MigrVie_ZLjj/view?usp=sharing" data-popup-link>Zum Download</a>
-              </div>
-            </article>
+          <div class="section-actions" style="justify-content: center">
+            <a class="button" href="seiten/geschichtenreich.html">Weitere Bücher ansehen</a>
           </div>
         </div>
       </section>
 
-      <section id="malbuecher">
+      <section class="why" aria-labelledby="why-title">
         <div class="container">
-          <div class="section-title">
-            <p class="pill">Zum Verlieben schön</p>
-            <h2>Malbücher & Teaser</h2>
-            <p>Jedes Buch bekommt ein großes Motiv, einen passenden Teaser und darunter den Button Jetzt entdecken.</p>
+          <div class="section-heading">
+            <span class="eyebrow">Warum Kinder meine Bücher lieben</span>
+            <h2 id="why-title">Kleine Momente, die lange bleiben</h2>
           </div>
 
-          <div class="product-list">
-            <article class="product">
-              <div class="product-grid">
-                <div class="product-media">
-                  <div class="product-image">
-                    <img src="images/lina-herzlich.png" alt="Buchcover Lina Herzlicht Malbuch für kreative Mädchen" />
-                  </div>
-                </div>
-                <div class="product-content">
-                  <div class="mini-row">
-                    <div class="mini-cover">
-                      <img src="images/lina-herzlich.png" alt="" />
-                    </div>
-                    <div>
-                      <span class="mini-badge">Malbuch</span>
-                      <p class="subtitle">Malbuch für kreative Mädchen ab 6 Jahren</p>
-                    </div>
-                  </div>
-                  <h3>Lina Herzlicht</h3>
-                  <p class="product-desc">Ein fröhliches Malbuch voller Herz, Fantasie und Magie mit dicken Linien und leicht ausmalbaren Motiven.</p>
-                  <div class="product-teaser">
-                    <div class="product-teaser-grid">
-                      <div class="teaser-image">
-                        <img src="images/rettet-das-herzland.png" alt="Teaserbild Rettet das Herzland zu Lina Herzlicht" />
-                      </div>
-                      <div>
-                        <p class="teaser-label">Teaser</p>
-                        <p>Für Kinder, die märchenhafte Welten, Drachen und liebevolle Details mögen.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <ul class="highlight-list">
-                    <li><span class="check">✓</span>Dicke Linien</li>
-                    <li><span class="check">✓</span>Leichtes Ausmalen</li>
-                    <li><span class="check">✓</span>Herz, Fantasie und Magie</li>
-                  </ul>
-                  <a class="button" href="https://www.amazon.de/dp/B0GR19NZCW" data-popup-link>Jetzt entdecken</a>
-                </div>
+          <div class="reason-grid">
+            <article class="reason-card">
+              <span class="reason-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H20v17H7.5A3.5 3.5 0 0 0 4 22V5.5z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 6h8M8 10h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <div>
+                <h3>Fantasie</h3>
+                <p>Welten, die Kinder leicht betreten und weiterträumen können.</p>
               </div>
             </article>
 
-            <article class="product">
-              <div class="product-grid">
-                <div class="product-media">
-                  <div class="product-image">
-                    <img src="images/mara-strubbelkopf.png" alt="Buchcover Mara Strubbelkopf Malbuch" />
-                  </div>
-                </div>
-                <div class="product-content">
-                  <div class="mini-row">
-                    <div class="mini-cover">
-                      <img src="images/mara-strubbelkopf.png" alt="" />
-                    </div>
-                    <div>
-                      <span class="mini-badge">Malbuch</span>
-                      <p class="subtitle">Ein freches Malbuch für kreative Kinder</p>
-                    </div>
-                  </div>
-                  <h3>Mara Strubbelkopf</h3>
-                  <p class="product-desc">Bunte, wilde und charmante Ausmalmotive rund um Mara, ihren Strubbelkopf und kreative kleine Abenteuer.</p>
-                  <div class="product-teaser">
-                    <div class="product-teaser-grid">
-                      <div class="teaser-image">
-                        <img src="images/strubbeltastische-malvorlagen-freebie.png" alt="Teaserbild Strubbeltastische Malvorlagen" />
-                      </div>
-                      <div>
-                        <p class="teaser-label">Teaser</p>
-                        <p>Frech, fröhlich und perfekt für Kinder, die starke Figuren lieben.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <ul class="highlight-list">
-                    <li><span class="check">✓</span>Freche Motive</li>
-                    <li><span class="check">✓</span>Kreative Figuren</li>
-                    <li><span class="check">✓</span>Viel Spaß beim Ausmalen</li>
-                  </ul>
-                  <a class="button" href="https://www.amazon.de/dp/B0GJPH45P6" data-popup-link>Jetzt entdecken</a>
-                </div>
+            <article class="reason-card">
+              <span class="reason-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 20s-8-4.6-8-10.2A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.8C20 15.4 12 20 12 20z" fill="currentColor"/></svg>
+              </span>
+              <div>
+                <h3>Freundschaft</h3>
+                <p>Figuren, die zusammenhalten, zuhören und mutig werden.</p>
               </div>
             </article>
 
-            <article class="product">
-              <div class="product-grid">
-                <div class="product-media">
-                  <div class="product-image">
-                    <img src="images/wolkenhorn-malbuch-cover.png" alt="Buchcover Wolkenhorn Mein süßes Einhorn-Malbuch" />
-                  </div>
-                </div>
-                <div class="product-content">
-                  <div class="mini-row">
-                    <div class="mini-cover">
-                      <img src="images/wolkenhorn-malbuch-cover.png" alt="" />
-                    </div>
-                    <div>
-                      <span class="mini-badge">Malbuch</span>
-                      <p class="subtitle">Mein süßes Einhorn-Malbuch ab 4 Jahren</p>
-                    </div>
-                  </div>
-                  <h3>Wolkenhorn</h3>
-                  <p class="product-desc">Ein sanftes Einhorn-Malbuch mit niedlichen Motiven, großen Flächen und zauberhaften Ausmalbildern.</p>
-                  <div class="product-teaser">
-                    <div class="product-teaser-grid">
-                      <div class="teaser-image">
-                        <img src="images/wolkenhorn-abenteuer-freebie.png" alt="Teaserbild Wolkenhorn Abenteuer im Wolkenland" />
-                      </div>
-                      <div>
-                        <p class="teaser-label">Teaser</p>
-                        <p>Ausmalen zwischen Wolken, Regenbogen und kleinen Fantasiewelten.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <ul class="highlight-list">
-                    <li><span class="check">✓</span>Niedliche Motive</li>
-                    <li><span class="check">✓</span>Große Flächen</li>
-                    <li><span class="check">✓</span>Fördert Kreativität</li>
-                  </ul>
-                  <a class="button" href="https://www.amazon.de/dp/B0FK2P11JZ" data-popup-link>Jetzt entdecken</a>
-                </div>
+            <article class="reason-card">
+              <span class="reason-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <h3>Abenteuer</h3>
+                <p>Spannung, die neugierig macht und trotzdem kindgerecht bleibt.</p>
               </div>
             </article>
 
-            <article class="product">
-              <div class="product-grid">
-                <div class="product-media">
-                  <div class="product-image">
-                    <img src="images/mein-tier-mandala-malbuch.png" alt="Buchcover Mein Tier Mandala Malbuch" />
-                  </div>
-                </div>
-                <div class="product-content">
-                  <div class="mini-row">
-                    <div class="mini-cover">
-                      <img src="images/mein-tier-mandala-malbuch.png" alt="" />
-                    </div>
-                    <div>
-                      <span class="mini-badge">Mandala</span>
-                      <p class="subtitle">Mit drei spannenden Fakten pro Motiv</p>
-                    </div>
-                  </div>
-                  <h3>Mein Tier Mandala Malbuch</h3>
-                  <p class="product-desc">Tiermandalas treffen auf kleine Wissenshäppchen: malen, staunen und dabei spielerisch schlauer werden.</p>
-                  <div class="product-teaser">
-                    <div class="product-teaser-grid">
-                      <div class="teaser-image">
-                        <img src="images/aha-malen-staunen-teaser.png" alt="Teaserbild Aha, malen, staunen, schlauer werden" />
-                      </div>
-                      <div>
-                        <p class="teaser-label">Teaser</p>
-                        <p>Für kluge Köpfe, die Tiere, Muster und kleine Fakten lieben.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <ul class="highlight-list">
-                    <li><span class="check">✓</span>Tiermandalas</li>
-                    <li><span class="check">✓</span>3 Fakten pro Motiv</li>
-                    <li><span class="check">✓</span>Ruhiger Ausmalspaß</li>
-                  </ul>
-                  <a class="button" href="https://www.amazon.de/dp/B0GRZKHFW9" data-popup-link>Jetzt entdecken</a>
-                </div>
+            <article class="reason-card">
+              <span class="reason-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 10h.01M17 10h.01M8 15c1.2 1.2 2.5 1.8 4 1.8s2.8-.6 4-1.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </span>
+              <div>
+                <h3>Humor</h3>
+                <p>Leichte, warme Szenen zum Schmunzeln und Wiedererzählen.</p>
               </div>
             </article>
 
-            <article class="product">
-              <div class="product-grid">
-                <div class="product-media">
-                  <div class="product-image">
-                    <img src="images/erdbeerschoen-teaser.jpg" alt="Teaserbild Erdbeerschön Malbuch" />
-                  </div>
-                </div>
-                <div class="product-content">
-                  <div class="mini-row">
-                    <div class="mini-cover">
-                      <img src="images/erdbeerschoen-teaser.jpg" alt="" />
-                    </div>
-                    <div>
-                      <span class="mini-badge">Malbuch</span>
-                      <p class="subtitle">Traumhaftes Ausmalbuch für Kinder</p>
-                    </div>
-                  </div>
-                  <h3>Erdbeerschön</h3>
-                  <p class="product-desc">Eine süße Beerenwelt mit Erdbeeren, kleinen Figuren und magischen Wesen für gemütliche Ausmalstunden.</p>
-                  <div class="product-teaser">
-                    <div class="product-teaser-grid">
-                      <div class="teaser-image">
-                        <img src="images/erdbeerschoene-malvorlagen-freebie.png" alt="Teaserbild Erdbeerschöne Malvorlagen" />
-                      </div>
-                      <div>
-                        <p class="teaser-label">Teaser</p>
-                        <p>Beeren-Traum wird wahr: perfekt für kleine Hände ab 4 Jahren.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <ul class="highlight-list">
-                    <li><span class="check">✓</span>30 Malmotive</li>
-                    <li><span class="check">✓</span>ab 4 Jahren</li>
-                    <li><span class="check">✓</span>Fördert Kreativität und Ruhe</li>
-                  </ul>
-                  <a class="button" href="https://www.amazon.de/dp/B0DJBYRM36" data-popup-link>Jetzt entdecken</a>
-                </div>
+            <article class="reason-card">
+              <span class="reason-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m4 20 2.8-.7L18.5 7.6a2 2 0 0 0-2.8-2.8L4 16.5V20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13.8 5.8 18.2 10.2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </span>
+              <div>
+                <h3>Kreativität</h3>
+                <p>Malbücher, Freebies und Ideen, die kleine Hände aktiv machen.</p>
               </div>
             </article>
-
           </div>
         </div>
       </section>
 
-      <section id="magische-rubriken">
+      <section class="author" aria-labelledby="author-title">
         <div class="container">
-          <div class="section-title">
-            <p class="pill">Neue Zauberwelten</p>
-            <h2>Mehr Magie auf Papier</h2>
-            <p>Hier wachsen weitere Rubriken für große Träumerinnen, kleine Lesekinder und ganze Geschichtenwelten.</p>
-          </div>
-          <div class="magic-grid">
-            <article class="why-card" id="erwachsenen-malzauber">
-              <span class="benefit-icon" aria-hidden="true">✧</span>
-              <h3>Malbuchzauber für Erwachsene</h3>
-              <p>Sanfte Motive, ruhige Linien und kleine Auszeiten für alle, die beim Malen wieder durchatmen möchten.</p>
-            </article>
-            <article class="why-card" id="kinderbuch-serien">
-              <span class="benefit-icon" aria-hidden="true">☾</span>
-              <h3>Magische Kinderbuch-Serien</h3>
-              <p>Fortlaufende Reihen mit vertrauten Figuren, zauberhaften Orten und Geschichten, die Kinder gern wiedersehen.</p>
-            </article>
-            <article class="why-card" id="kinderbuecher">
-              <span class="benefit-icon" aria-hidden="true">✦</span>
-              <h3>Geschichten aus dem Kinderbuchreich</h3>
-              <p>Liebevolle Einzelbücher mit Herz, Fantasie und kleinen Abenteuern für gemütliche Vorlesemomente.</p>
-            </article>
+          <div class="author-panel">
+            <div class="author-copy">
+              <span class="kicker">Über die Autorin</span>
+              <h2 id="author-title">Geschichten stehen im Mittelpunkt</h2>
+              <p>Hinter Zauber auf Papier steht Nicole Feller. Der Fokus bleibt auf den Buchwelten: Figuren mit Herz, Geschichten zum Mitfühlen und kreative Begleiter, die Kinder gern wieder öffnen.</p>
+              <div class="hero-actions">
+                <a class="button secondary" href="seiten/ueber-mich.html">Mehr erfahren</a>
+              </div>
+            </div>
+            <img class="author-mascot" src="images/fluse-mascot.jpg" alt="Fluse begleitet die Geschichten von Zauber auf Papier" />
           </div>
         </div>
       </section>
 
-      <section id="ueber-mich">
+      <section class="projects" id="projekte" aria-labelledby="projects-title">
         <div class="container">
-          <div class="section-title">
-            <p class="pill">Warum Kinder Malen lieben</p>
-            <h2>Manchmal braucht es nur ein paar Buntstifte, ein schönes Motiv und einen Moment Ruhe.</h2>
+          <div class="section-heading">
+            <span class="eyebrow">Aktuelle Projekte</span>
+            <h2 id="projects-title">Was gerade im Zauberbuch wächst</h2>
           </div>
-          <div class="why-grid">
-            <article class="why-card">
-              <span class="benefit-icon" aria-hidden="true">✦</span>
-              <h3>Fördert Kreativität</h3>
-              <p>Kinder wählen Farben, probieren Muster aus und gestalten ihre eigene kleine Welt.</p>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/home-book-lio.jpg" alt="Lio Herzfunken Cover" />
+              </div>
+              <div class="project-body">
+                <span class="tag">Geschichtenreich</span>
+                <h3>Neue Vorlesebücher</h3>
+                <p>Lio, Zilly, Lolle und Erdbeerschön bekommen auf der Geschichtenseite ihren eigenen Platz.</p>
+                <a href="seiten/geschichtenreich.html">Zur Seite →</a>
+              </div>
             </article>
-            <article class="why-card">
-              <span class="benefit-icon" aria-hidden="true">♡</span>
-              <h3>Schenkt Ruhe</h3>
-              <p>Ausmalen kann ein weicher Moment zwischen Alltag, Spiel und Konzentration sein.</p>
+
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/home-project-flunkerfunken.jpg" alt="Die Flunkerfunken-Bande Cover" />
+              </div>
+              <div class="project-body">
+                <span class="tag">Serienzauber</span>
+                <h3>Reihen mit Rätselmagie</h3>
+                <p>Flunkerfunken-Bande, Detektei L.U.P.E. und Gruselabenteuer sind übersichtlich sortiert.</p>
+                <a href="seiten/serienzauber.html">Zur Seite →</a>
+              </div>
             </article>
-            <article class="why-card">
-              <span class="benefit-icon" aria-hidden="true">✓</span>
-              <h3>Macht stolz</h3>
-              <p>Fertige Bilder zeigen Kindern, was sie mit Geduld und Fantasie schaffen können.</p>
+
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/home-project-mandala.jpg" alt="Tierische Mandala Freunde Freebie" />
+              </div>
+              <div class="project-body">
+                <span class="tag">Freebies</span>
+                <h3>Gratis Downloads</h3>
+                <p>Kleine Ausmalwelten zum Herunterladen, Ausdrucken und Direktloslegen.</p>
+                <a href="seiten/funkel-downloads.html">Zur Seite →</a>
+              </div>
             </article>
           </div>
         </div>
       </section>
-
     </main>
 
-    <footer class="footer">
+    <footer class="site-footer">
       <div class="container footer-grid">
-        <div>
-          <h2>Zauber auf Papier</h2>
-          <p>Liebevoll gestaltete Malbücher, kreative Freebies und kleine Ausmalwelten für Kinder und Familien.</p>
-        </div>
-        <div>
-          <h3>Rechtliches</h3>
-          <div class="footer-links">
-            <a href="seiten/datenschutz.html">Datenschutz</a>
-            <a href="seiten/impressum.html">Impressum</a>
-            <a href="seiten/kontakt.html">Kontakt</a>
+        <div class="footer-brand">
+          <img src="images/fluse-mini.jpg" alt="Fluse im Footer von Zauber auf Papier" />
+          <div>
+            <h2>Zauber auf Papier</h2>
+            <p>Helle Kinderbuchwelten voller Fantasie, Abenteuer, Humor und Herz.</p>
           </div>
         </div>
-        <div>
-          <h3>Social</h3>
-          <div class="footer-links">
-            <a href="https://www.instagram.com/zauber_auf_papier?igsh=MWM4c21jcXR1cXUzcg==" data-popup-link>Instagram</a>
-            <a href="https://pin.it/42RjLvB2o" data-popup-link>Pinterest</a>
-            <a href="https://www.tiktok.com/@zauberaufpapierx?_r=1&_t=ZG-96r3VpoOtCT" data-popup-link>TikTok</a>
-          </div>
+
+        <div class="footer-links">
+          <h3>Entdecken</h3>
+          <a href="seiten/funkel-downloads.html">Freebies</a>
+          <a href="seiten/sternenmalerei.html">Malbuchzauber</a>
+          <a href="seiten/serienzauber.html">Serienzauber</a>
+          <a href="seiten/geschichtenreich.html">Geschichtenreich</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Kontakt & Rechtliches</h3>
+          <a href="mailto:nickifeller456@gmail.com">nickifeller456@gmail.com</a>
+          <a href="seiten/ueber-mich.html">Über mich</a>
+          <a href="seiten/impressum.html">Impressum</a>
+          <a href="seiten/datenschutz.html">Datenschutz</a>
         </div>
       </div>
-      <div class="copyright">
+      <div class="footer-bottom">
         <div class="container">© 2026 Nicole Feller. Alle Rechte vorbehalten.</div>
       </div>
     </footer>
-    <dialog class="popup-fallback" id="popup-fallback">
-      <h2>Der Zauber wartet</h2>
-      <p>Falls dein Browser Popups blockiert, kannst du den Link hier in einem neuen Fenster öffnen.</p>
-      <div class="popup-actions">
-        <a class="button" id="popup-fallback-link" href="#" target="_blank" rel="noopener">Link öffnen</a>
-        <button type="button" id="popup-close">Schließen</button>
-      </div>
-    </dialog>
-    <script>
-      (() => {
-        const fallback = document.getElementById("popup-fallback");
-        const fallbackLink = document.getElementById("popup-fallback-link");
-        const closeButton = document.getElementById("popup-close");
-
-        document.querySelectorAll("a[data-popup-link]").forEach((link) => {
-          link.addEventListener("click", (event) => {
-            event.preventDefault();
-            const popup = window.open(
-              link.href,
-              "zauberAufPapierPopup",
-              "popup=yes,width=1040,height=780,left=120,top=70"
-            );
-
-            if (popup) {
-              popup.opener = null;
-              popup.focus();
-              return;
-            }
-
-            fallbackLink.href = link.href;
-            fallback.showModal();
-          });
-        });
-
-        closeButton.addEventListener("click", () => fallback.close());
-      })();
-    </script>
   </body>
 </html>
