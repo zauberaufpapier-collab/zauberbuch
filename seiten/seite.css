@@ -857,13 +857,22 @@ section {
 }
 
 .about-bath-scene {
+  overflow: hidden;
+  margin: 0;
   border: 1px solid var(--border);
   border-radius: 28px;
   background:
     repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0 8px, rgba(223, 244, 255, 0.38) 8px 16px),
     var(--surface-soft);
-  padding: 26px;
+  padding: 0;
   box-shadow: 0 12px 32px rgba(18, 54, 90, 0.07);
+}
+
+.about-bath-scene img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
 }
 
 .about-bath-stars {
