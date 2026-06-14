@@ -48,20 +48,5 @@
     });
   });
 
-  document.querySelectorAll("a[data-coming-soon-link]").forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      const bookTitle = link.dataset.bookTitle || "dieses Buch";
-
-      showFallback({
-        title: "Amazon-Link folgt bald",
-        text: `Der Produktlink für ${bookTitle} wird später ergänzt. Bis dahin kannst du per E-Mail anfragen.`,
-        href: link.href,
-        label: "Per E-Mail anfragen",
-        target: "",
-      });
-    });
-  });
-
   closeButton?.addEventListener("click", () => fallback?.close());
 })();
