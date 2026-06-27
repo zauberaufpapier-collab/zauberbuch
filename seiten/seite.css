@@ -403,6 +403,10 @@ section {
   background: var(--text);
 }
 
+.series-cover-link.is-static {
+  cursor: default;
+}
+
 .series-cover-link img {
   width: 100%;
   height: 100%;
