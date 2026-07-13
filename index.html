@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&family=Nunito:wght@400;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&amp;family=Nunito:wght@400;700;800;900&amp;display=swap"
       rel="stylesheet"
     />
     <style>
@@ -729,11 +729,42 @@
         gap: 24px;
       }
 
+      .book-group {
+        display: grid;
+        gap: 20px;
+        margin-top: 44px;
+      }
+
+      .book-group:first-of-type {
+        margin-top: 32px;
+      }
+
+      .book-group-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        border-bottom: 1px solid rgba(18, 54, 90, 0.12);
+        padding-bottom: 14px;
+      }
+
+      .book-group-head h3 {
+        color: var(--ink);
+        font-size: clamp(1.45rem, 3vw, 2rem);
+      }
+
+      .book-group-head a {
+        flex: 0 0 auto;
+        color: var(--coral-dark);
+        font-size: 0.9rem;
+        font-weight: 900;
+      }
+
       .book-card {
         position: relative;
         display: grid;
         gap: 16px;
-        align-items: end;
+        grid-template-rows: auto 1fr;
       }
 
       .book-cover {
@@ -748,31 +779,20 @@
         transform-origin: center bottom;
       }
 
-      .book-cover::after {
-        position: absolute;
-        inset: 0 0 0 auto;
-        width: 18px;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45));
-        content: "";
-      }
-
       .book-cover img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        transition: transform 260ms ease;
+        object-fit: contain;
       }
 
       .book-card:hover .book-cover {
-        transform: translateY(-8px) rotate(-1.5deg);
-      }
-
-      .book-card:hover .book-cover img {
-        transform: scale(1.035);
+        transform: translateY(-4px);
       }
 
       .book-info {
-        min-height: 142px;
+        display: flex;
+        min-height: 170px;
+        flex-direction: column;
         border: 1px solid rgba(216, 235, 241, 0.94);
         border-radius: 20px;
         background: rgba(255, 255, 255, 0.9);
@@ -785,6 +805,20 @@
         font-size: 1.02rem;
         font-weight: 900;
         line-height: 1.2;
+      }
+
+      .book-kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 10px;
+        border-radius: 999px;
+        background: rgba(223, 244, 255, 0.82);
+        padding: 6px 10px;
+        color: var(--primary-dark);
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
       }
 
       .book-info p {
@@ -803,6 +837,8 @@
         color: var(--coral-dark);
         font-size: 0.92rem;
         font-weight: 900;
+        margin-top: auto;
+        padding-top: 14px;
       }
 
       .why {
@@ -1197,16 +1233,8 @@
         }
 
         .book-shelf {
-          grid-template-columns: repeat(6, minmax(0, 1fr));
-          align-items: end;
-        }
-
-        .book-card:nth-child(2n) {
-          margin-top: 34px;
-        }
-
-        .book-card:nth-child(3n) {
-          margin-top: 18px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          align-items: stretch;
         }
 
         .reason-grid {
@@ -1239,7 +1267,7 @@
               <path d="M12 2.4l2.6 6.6 7 2.6-7 2.6-2.6 7-2.6-7-7-2.6 7-2.6L12 2.4z" fill="currentColor" />
             </svg>
           </span>
-          <span>Zauber auf Papier<small>Kinderbücher & Kreativwelten</small></span>
+          <span>Zauber auf Papier<small>Kinderbücher &amp; Kreativwelten</small></span>
         </a>
 
         <nav class="nav" aria-label="Hauptnavigation">
@@ -1271,7 +1299,7 @@
               <path d="M12 3.5c-4.1 0-7 2.8-7 6.5 0 2.4 1.4 4.2 3.2 4.2.5 0 .8-.3.7-.8l-.2-.9c-.1-.4-.1-.5.2-.8.5-.6.8-1.3.8-2.2 0-1.7 1.1-3.2 3.3-3.2 1.8 0 2.9 1.1 2.9 2.7 0 2.1-1 3.9-2.4 3.9-.8 0-1.4-.7-1.2-1.5l.5-2c.2-.9-.2-1.6-1-1.6-.8 0-1.5.8-1.5 1.9 0 .7.2 1.2.2 1.2l-1 4.2c-.2.8-.1 1.9 0 2.7.1.2.3.2.4.1.6-.8 1.5-2.1 1.8-3.3l.3-1.2c.4.7 1.2 1.1 2.1 1.1 2.8 0 4.8-2.6 4.8-6 0-2.8-2.4-5.1-5.8-5.1z" fill="currentColor" />
             </svg>
           </a>
-          <a href="https://www.tiktok.com/@zauberaufpapierx?_r=1&_t=ZG-96r3VpoOtCT" target="_blank" rel="noopener" aria-label="TikTok">
+          <a href="https://www.tiktok.com/@zauberaufpapierx?_r=1&amp;_t=ZG-96r3VpoOtCT" target="_blank" rel="noopener" aria-label="TikTok">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M15 4c.5 2.6 1.9 4.1 4 4.5v3.2c-1.5-.1-2.8-.6-4-1.5v5.5c0 3-2.1 5.1-5.1 5.1A4.7 4.7 0 0 1 5 16c0-2.8 2.2-4.9 5-4.9.4 0 .8 0 1.1.1v3.3a2.5 2.5 0 0 0-1.1-.2A1.7 1.7 0 0 0 8.2 16c0 1 .8 1.7 1.8 1.7s1.8-.7 1.8-1.9V4h3.2z" fill="currentColor" />
             </svg>
@@ -1324,15 +1352,15 @@
 
             <article class="world-card sky">
               <div class="world-media">
-                <img src="images/home-world-lio.jpg" alt="Lio Herzfunken mit Drache und Wolken" />
+                <img src="images/seelengarten.jpg" alt="Seelengarten Malbuch für Erwachsene" />
               </div>
               <div class="world-content">
                 <span class="world-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><path d="M12 20s-8-4.6-8-10.2A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.8C20 15.4 12 20 12 20z" fill="currentColor"/></svg>
                 </span>
-                <h3>Lio Herzfunken</h3>
-                <p>Ein kleiner Drache, ein mutiges Herz und Abenteuer, die Kinder zum Strahlen bringen.</p>
-                <a class="world-link" href="seiten/geschichtenreich.html">Mehr entdecken →</a>
+                <h3>Malbücher für Große</h3>
+                <p>Florale, fantastische und ruhige Ausmalwelten für kreative Pausen.</p>
+                <a class="world-link" href="seiten/malbuch-schaetze.html">Mehr entdecken →</a>
               </div>
             </article>
 
@@ -1370,81 +1398,105 @@
       <section class="featured" id="buecher" aria-labelledby="books-title">
         <div class="container">
           <div class="section-heading">
-            <span class="eyebrow">Beliebte Bücher</span>
-            <h2 id="books-title">Eine Galerie voller Zauber</h2>
-            <p>Große Cover, klare Orientierung und schnelle Wege zu den passenden Buchseiten.</p>
+            <span class="eyebrow">Mein Bücherregal</span>
+            <h2 id="books-title">Alle Bücher auf einen Blick</h2>
+            <p>Übersichtlich nach Geschichten, Kinder-Malbüchern und kreativen Auszeiten für Große sortiert.</p>
           </div>
 
-          <div class="book-shelf">
-            <article class="book-card">
+          <div class="book-group">
+            <div class="book-group-head"><h3>Geschichten &amp; Reihen</h3><a href="seiten/geschichtenreich.html">Alle Geschichten →</a></div>
+            <div class="book-shelf">
+              <article class="book-card">
               <a class="book-cover" href="https://www.amazon.de/dp/B0F3XQ4QVY" data-popup-link>
                 <img src="images/home-book-lio.jpg" alt="Lio Herzfunken - Ein Drache hebt ab" />
               </a>
               <div class="book-info">
+                <span class="book-kicker">Kinderbuch</span>
                 <h3>Lio Herzfunken</h3>
                 <p>Zum Vorlesen und Selberlesen mit Drachenmut.</p>
                 <a href="https://www.amazon.de/dp/B0F3XQ4QVY" data-popup-link>Jetzt ansehen</a>
               </div>
-            </article>
+              </article>
 
-            <article class="book-card">
+              <article class="book-card">
               <a class="book-cover" href="https://www.amazon.de/dp/B0H2RJN6XR" data-popup-link>
                 <img src="images/home-book-zilly.jpg" alt="Zilly Zitro und der Limonadenzauber" />
               </a>
               <div class="book-info">
+                <span class="book-kicker">Kinderbuch</span>
                 <h3>Zilly Zitro</h3>
                 <p>Ein sanftes Abenteuer mit Limonadenmagie.</p>
                 <a href="https://www.amazon.de/dp/B0H2RJN6XR" data-popup-link>Jetzt ansehen</a>
               </div>
-            </article>
+              </article>
 
-            <article class="book-card">
+              <article class="book-card">
               <a class="book-cover" href="https://www.amazon.de/dp/B0FPQDR443" data-popup-link>
                 <img src="images/home-book-lolle.jpg" alt="Lolle Löckchen und der verschwundene Glitzertag" />
               </a>
               <div class="book-info">
+                <span class="book-kicker">Kinderbuch</span>
                 <h3>Lolle Löckchen</h3>
                 <p>Gefühle verstehen, stärken und gemeinsam wachsen.</p>
                 <a href="https://www.amazon.de/dp/B0FPQDR443" data-popup-link>Jetzt ansehen</a>
               </div>
-            </article>
+              </article>
 
-            <article class="book-card">
+              <article class="book-card">
               <a class="book-cover" href="https://www.amazon.de/dp/B0H2PWSHYJ" data-popup-link>
                 <img src="images/home-book-prinzessin-erdbeerschoen.jpg" alt="Prinzessin Erdbeerschön und der magische Wunschkuchen" />
               </a>
               <div class="book-info">
+                <span class="book-kicker">Kinderbuch</span>
                 <h3>Prinzessin Erdbeerschön</h3>
                 <p>Ein süßer Wunschkuchen für kleine Träumer.</p>
                 <a href="https://www.amazon.de/dp/B0H2PWSHYJ" data-popup-link>Jetzt ansehen</a>
               </div>
-            </article>
+              </article>
 
-            <article class="book-card">
+              <article class="book-card">
               <a class="book-cover" href="seiten/serienzauber.html">
                 <img src="images/home-book-flunkerfunken.jpg" alt="Die Flunkerfunken-Bande - Der Jahrmarkt des Vergessens" />
               </a>
               <div class="book-info">
+                <span class="book-kicker">Buchreihe</span>
                 <h3>Flunkerfunken-Bande</h3>
                 <p>Magische Rätsel für kleine Spürnasen.</p>
                 <a href="seiten/serienzauber.html">Jetzt ansehen</a>
               </div>
-            </article>
+              </article>
+            </div>
+          </div>
 
-            <article class="book-card">
+          <div class="book-group">
+            <div class="book-group-head"><h3>Malbücher für Kinder</h3><a href="seiten/sternenmalerei.html">Alle Kinder-Malbücher →</a></div>
+            <div class="book-shelf">
+              <article class="book-card">
               <a class="book-cover" href="seiten/sternenmalerei.html">
                 <img src="images/home-book-wolkenhorn.jpg" alt="Wolkenhorn Malbuch" />
               </a>
               <div class="book-info">
+                <span class="book-kicker">Malbuch ab 4</span>
                 <h3>Wolkenhorn</h3>
                 <p>Zauberhafte Ausmalbilder mit weichen Linien.</p>
                 <a href="seiten/sternenmalerei.html">Jetzt ansehen</a>
               </div>
-            </article>
+              </article>
+
+              <article class="book-card"><a class="book-cover" href="seiten/sternenmalerei.html"><img src="images/einhorntraeume.jpg" alt="Einhornträume Malbuch für Kinder" /></a><div class="book-info"><span class="book-kicker">Malbuch ab 4</span><h3>Einhornträume</h3><p>Dicke Linien und fantasievolle Einhorn-Abenteuer.</p><a href="seiten/sternenmalerei.html">Mehr erfahren</a></div></article>
+              <article class="book-card"><a class="book-cover" href="seiten/sternenmalerei.html"><img src="images/muschelglueck.jpg" alt="Muschelglück Malbuch für Kinder" /></a><div class="book-info"><span class="book-kicker">Malbuch ab 4</span><h3>Muschelglück</h3><p>50 süße Unterwassermotive mit fröhlichen Meeresfreunden.</p><a href="seiten/sternenmalerei.html">Mehr erfahren</a></div></article>
+              <article class="book-card"><a class="book-cover" href="https://www.amazon.de/dp/B0GRZKHFW9" data-popup-link><img src="images/mein-tier-mandala-malbuch.jpg" alt="Mein Tier Mandala Malbuch" /></a><div class="book-info"><span class="book-kicker">Mandala &amp; Wissen</span><h3>Mein Tier Mandala</h3><p>50 Tier-Mandalas mit drei Fakten zu jedem Motiv.</p><a href="https://www.amazon.de/dp/B0GRZKHFW9" data-popup-link>Jetzt ansehen</a></div></article>
+              <article class="book-card"><a class="book-cover" href="seiten/sternenmalerei.html"><img src="images/mein-dino-mandala-malbuch.jpg" alt="Mein Dino Mandala Malbuch" /></a><div class="book-info"><span class="book-kicker">Mandala &amp; Wissen</span><h3>Mein Dino Mandala</h3><p>50 Dino-Mandalas mit spannenden Fakten aus der Urzeit.</p><a href="seiten/sternenmalerei.html">Mehr erfahren</a></div></article>
+              <article class="book-card"><a class="book-cover" href="seiten/sternenmalerei.html"><img src="images/mein-weltall-mandala-malbuch.jpg" alt="Mein Weltall Mandala Malbuch" /></a><div class="book-info"><span class="book-kicker">Mandala &amp; Wissen</span><h3>Mein Weltall Mandala</h3><p>50 galaktische Motive mit Wissen zum Staunen.</p><a href="seiten/sternenmalerei.html">Mehr erfahren</a></div></article>
+            </div>
           </div>
 
-          <div class="section-actions" style="justify-content: center">
-            <a class="button" href="seiten/geschichtenreich.html">Weitere Bücher ansehen</a>
+          <div class="book-group">
+            <div class="book-group-head"><h3>Malbücher für Große</h3><a href="seiten/malbuch-schaetze.html">Alle Malbücher für Große →</a></div>
+            <div class="book-shelf">
+              <article class="book-card"><a class="book-cover" href="seiten/malbuch-schaetze.html"><img src="images/seelengarten.jpg" alt="Seelengarten Malbuch für Erwachsene" /></a><div class="book-info"><span class="book-kicker">Achtsamkeit</span><h3>Seelengarten</h3><p>Florale Motive und achtsame Impulse für kreative Pausen.</p><a href="seiten/malbuch-schaetze.html">Mehr erfahren</a></div></article>
+              <article class="book-card"><a class="book-cover" href="https://www.amazon.de/dp/B0DLBCZXJS" data-popup-link><img src="images/malbuch-grosse-sagenhafte-wesen.jpg" alt="Sagenhafte Wesen Fantasy Malbuch für Erwachsene" /></a><div class="book-info"><span class="book-kicker">Fantasy</span><h3>Sagenhafte Wesen</h3><p>Zauberhafte Wesen in einer sanften, detailreichen Märchenwelt.</p><a href="https://www.amazon.de/dp/B0DLBCZXJS" data-popup-link>Jetzt ansehen</a></div></article>
+            </div>
           </div>
         </div>
       </section>
@@ -1594,7 +1646,7 @@
         </div>
 
         <div class="footer-links">
-          <h3>Kontakt & Rechtliches</h3>
+          <h3>Kontakt &amp; Rechtliches</h3>
           <a href="mailto:nickifeller456@gmail.com">nickifeller456@gmail.com</a>
           <a href="seiten/ueber-mich.html">Über mich</a>
           <a href="seiten/impressum.html">Impressum</a>
