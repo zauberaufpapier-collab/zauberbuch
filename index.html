@@ -670,6 +670,16 @@
         transition: transform 240ms ease;
       }
 
+      .world-media.is-contain {
+        background: var(--white);
+      }
+
+      .world-media.is-contain img {
+        box-sizing: border-box;
+        object-fit: contain;
+        padding: 10px;
+      }
+
       .world-card:hover .world-media img {
         transform: scale(1.04);
       }
@@ -981,6 +991,16 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      .project-thumb.is-contain {
+        background: var(--white);
+      }
+
+      .project-thumb.is-contain img {
+        box-sizing: border-box;
+        object-fit: contain;
+        padding: 12px;
       }
 
       .project-body {
@@ -1337,7 +1357,7 @@
 
           <div class="world-grid">
             <article class="world-card sage">
-              <div class="world-media">
+              <div class="world-media is-contain">
                 <img src="images/home-world-geschichtenreich.jpg" alt="Illustration aus dem Geschichtenreich" />
               </div>
               <div class="world-content">
@@ -1379,7 +1399,7 @@
             </article>
 
             <article class="world-card coral">
-              <div class="world-media">
+              <div class="world-media is-contain">
                 <img src="images/home-world-malbuch.jpg" alt="Kreative Ausmalwelt mit süßen Motiven" />
               </div>
               <div class="world-content">
@@ -1444,7 +1464,7 @@
 
               <article class="book-card">
               <a class="book-cover" href="https://www.amazon.de/dp/B0H2PWSHYJ" data-popup-link>
-                <img src="images/home-book-prinzessin-erdbeerschoen.jpg" alt="Prinzessin Erdbeerschön und der magische Wunschkuchen" />
+                <img src="images/prinzessin-erdbeerschoen-wunschkuchen.png" alt="Prinzessin Erdbeerschön und der magische Wunschkuchen" />
               </a>
               <div class="book-info">
                 <span class="book-kicker">Kinderbuch</span>
@@ -1611,8 +1631,8 @@
             </article>
 
             <article class="project-card">
-              <div class="project-thumb">
-                <img src="images/home-project-mandala.jpg" alt="Tierische Mandala Freunde Freebie" />
+              <div class="project-thumb is-contain">
+                <img src="images/tierische-mandala-freunde-freebie.png" alt="Tierische Mandala-Freunde Gratis-Download" />
               </div>
               <div class="project-body">
                 <span class="tag">Freebies</span>
