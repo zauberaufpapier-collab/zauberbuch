@@ -20,30 +20,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&amp;family=Nunito:wght@400;700;800;900&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&amp;family=Nunito:wght@400;700;800;900&amp;display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --ink: #12365a;
-        --ink-soft: #34516b;
-        --muted: #607589;
-        --paper: #fffefa;
+        --ink: #43253a;
+        --ink-soft: #6c4358;
+        --muted: #7f6b73;
+        --paper: #fff8f1;
         --white: #ffffff;
-        --cloud: #f4fbff;
-        --sky: #dff4ff;
-        --sky-strong: #7cc8e7;
-        --turquoise: #28b9b0;
-        --turquoise-dark: #168d88;
-        --coral: #ff6f61;
-        --coral-dark: #d94b45;
+        --cloud: #fff3f2;
+        --sky: #f9d9d7;
+        --sky-strong: #ef9fa8;
+        --turquoise: #b7a371;
+        --turquoise-dark: #8b6f3f;
+        --coral: #d94c78;
+        --coral-dark: #9f315a;
         --sage: #9bc8a5;
         --sage-dark: #4f8f68;
-        --gold: #e7b65b;
-        --gold-soft: #fff4cf;
-        --line: #d8ebf1;
-        --shadow: 0 22px 65px rgba(18, 54, 90, 0.12);
-        --soft-shadow: 0 14px 40px rgba(18, 54, 90, 0.09);
+        --gold: #c99a4a;
+        --gold-soft: #fff0cf;
+        --line: #f0d8d6;
+        --shadow: 0 22px 65px rgba(96, 48, 64, 0.13);
+        --soft-shadow: 0 14px 40px rgba(96, 48, 64, 0.09);
       }
 
       * {
@@ -59,9 +59,9 @@
         min-height: 100vh;
         overflow-x: hidden;
         background:
-          radial-gradient(circle at 12% 8%, rgba(124, 200, 231, 0.18), transparent 22rem),
-          radial-gradient(circle at 92% 18%, rgba(40, 185, 176, 0.11), transparent 20rem),
-          linear-gradient(180deg, #fbfeff 0%, #ffffff 38%, #f8fcfb 100%);
+          radial-gradient(circle at 12% 8%, rgba(217, 76, 120, 0.14), transparent 22rem),
+          radial-gradient(circle at 92% 18%, rgba(201, 154, 74, 0.12), transparent 20rem),
+          linear-gradient(180deg, #fff8f1 0%, #ffffff 38%, #fff6f3 100%);
         color: var(--ink);
         font-family: "Nunito", system-ui, sans-serif;
       }
@@ -170,8 +170,8 @@
         width: fit-content;
         align-items: center;
         gap: 12px;
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.15rem;
+        font-family: "Dancing Script", "Fraunces", Georgia, serif;
+        font-size: 1.42rem;
         font-weight: 750;
         line-height: 1;
       }
@@ -181,13 +181,13 @@
         width: 48px;
         height: 48px;
         place-items: center;
-        border: 1px solid rgba(124, 200, 231, 0.45);
+        border: 1px solid rgba(217, 76, 120, 0.24);
         border-radius: 50%;
         background:
-          radial-gradient(circle, rgba(255, 255, 255, 0.96) 0 45%, rgba(223, 244, 255, 0.9) 46% 100%);
+          radial-gradient(circle, rgba(255, 255, 255, 0.96) 0 45%, rgba(255, 243, 242, 0.95) 46% 100%);
         color: var(--coral);
         box-shadow:
-          0 12px 28px rgba(40, 185, 176, 0.14),
+          0 12px 28px rgba(217, 76, 120, 0.12),
           inset 0 0 0 8px rgba(255, 255, 255, 0.62);
       }
 
@@ -550,13 +550,14 @@
       .banner-hero {
         padding: 28px 0 42px;
         background:
-          radial-gradient(circle at 10% 70%, rgba(124, 200, 231, 0.14), transparent 18rem),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(244, 251, 255, 0.58));
+          radial-gradient(circle at 10% 70%, rgba(217, 76, 120, 0.12), transparent 18rem),
+          linear-gradient(180deg, rgba(255, 248, 241, 0.92), rgba(255, 243, 242, 0.64));
       }
 
       .banner-frame {
         overflow: hidden;
-        border: 1px solid rgba(216, 235, 241, 0.92);
+        aspect-ratio: 1920 / 620;
+        border: 1px solid rgba(240, 216, 214, 0.96);
         border-radius: 28px;
         background: var(--white);
         box-shadow: var(--shadow);
@@ -566,6 +567,7 @@
       .header-banner {
         display: block;
         width: 100%;
+        height: 100%;
       }
 
       .header-banner {
@@ -1042,7 +1044,7 @@
         border-top: 1px solid var(--line);
         background:
           radial-gradient(circle at 10% 10%, rgba(124, 200, 231, 0.18), transparent 16rem),
-          linear-gradient(180deg, #f7fcff, #ffffff);
+          linear-gradient(180deg, #fff8f1, #ffffff);
       }
 
       .footer-grid {
@@ -1144,6 +1146,25 @@
       }
 
       @media (max-width: 679px) {
+        .header-inner {
+          justify-items: stretch;
+        }
+
+        .brand {
+          justify-self: start;
+        }
+
+        .nav {
+          width: min(calc(100vw - 2rem), 320px);
+          justify-self: start;
+          grid-template-columns: 1fr;
+        }
+
+        .nav a {
+          display: block;
+          width: 100%;
+        }
+
         .banner-hero {
           padding: 18px 0 32px;
         }
@@ -1153,7 +1174,25 @@
         }
 
         .header-banner {
-          aspect-ratio: 900 / 980;
+          aspect-ratio: 1920 / 620;
+          object-fit: cover;
+          object-position: center;
+          background: #fff8f1;
+        }
+
+        .section-heading h2 {
+          font-size: clamp(1.62rem, 7.6vw, 2.05rem);
+        }
+
+        .worlds .section-heading h2 {
+          max-width: 11ch;
+          margin-inline: auto;
+        }
+
+        .section-heading p {
+          max-width: 32ch;
+          margin-inline: auto;
+          font-size: 0.98rem;
         }
       }
 
@@ -1334,10 +1373,10 @@
           <h1 class="visually-hidden" id="hero-title">Zauber auf Papier - Kinderbücher voller Fantasie, Abenteuer und Herz</h1>
           <div class="banner-frame" aria-label="Zauber auf Papier Banner">
             <picture>
-              <source media="(max-width: 679px)" srcset="images/home-header-banner-mobile.jpg" />
+              <source media="(max-width: 679px)" srcset="images/home-header-banner-rose-fluse.png" />
               <img
                 class="header-banner"
-                src="images/home-header-banner.jpg"
+                src="images/home-header-banner-rose-fluse.png"
                 alt="Zauber auf Papier - Kinderbücher voller Fantasie, Abenteuer und Herz mit kleiner Fee"
                 fetchpriority="high"
                 decoding="async"
