@@ -299,16 +299,21 @@ section {
 }
 
 .image-square {
+  display: grid;
+  place-items: center;
   aspect-ratio: 1;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(180deg, #f4fbff, #ffffff);
+  padding: 14px;
 }
 
 .image-square img {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .image-contain {
