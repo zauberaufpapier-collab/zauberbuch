@@ -291,6 +291,22 @@ section {
   padding: 24px;
 }
 
+.freebie-grid .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.freebie-grid .card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.freebie-grid .actions {
+  margin-top: auto;
+  padding-top: 22px;
+}
+
 .card h2,
 .card h3 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
