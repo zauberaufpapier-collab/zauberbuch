@@ -543,6 +543,23 @@ section {
   text-underline-offset: 4px;
 }
 
+.legal-inline-notice {
+  margin: 14px 0 0;
+  border-left: 3px solid var(--gold);
+  background: rgba(255, 246, 222, 0.72);
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.legal-inline-notice a {
+  color: var(--primary);
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .footer {
   border-top: 1px solid var(--border);
   background:

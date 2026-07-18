@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("dancing-script-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 500 750;
+  font-display: swap;
+  src: url("fraunces-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("nunito-latin.woff2") format("woff2");
+}

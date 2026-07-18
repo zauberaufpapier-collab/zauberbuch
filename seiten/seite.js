@@ -15,16 +15,21 @@
 
     if (target) {
       fallbackLink.target = target;
-      fallbackLink.rel = "noopener";
+      fallbackLink.rel = "noopener noreferrer external";
+      fallbackLink.referrerPolicy = "no-referrer";
     } else {
       fallbackLink.removeAttribute("target");
       fallbackLink.removeAttribute("rel");
+      fallbackLink.removeAttribute("referrerpolicy");
     }
 
     fallback.showModal();
   };
 
   document.querySelectorAll("a[data-popup-link]").forEach((link) => {
+    link.rel = "noopener noreferrer external";
+    link.referrerPolicy = "no-referrer";
+
     link.addEventListener("click", (event) => {
       event.preventDefault();
       const popup = window.open(

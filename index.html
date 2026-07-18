@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
     <title>Zauber auf Papier | Kinderbücher voller Fantasie, Abenteuer und Herz</title>
     <meta
       name="description"
@@ -17,12 +18,7 @@
       property="og:description"
       content="Kinderbücher voller Fantasie, Abenteuer und Herz."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&amp;family=Nunito:wght@400;700;800;900&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="fonts/fonts.css" />
     <style>
       :root {
         --ink: #43253a;
@@ -1051,6 +1047,26 @@
         font-weight: 900;
       }
 
+      .legal-inline-notice {
+        max-width: 780px;
+        margin: 18px auto 0;
+        border-left: 3px solid var(--gold);
+        background: rgba(255, 246, 222, 0.76);
+        padding: 10px 12px;
+        color: var(--muted);
+        font-size: 0.84rem;
+        font-weight: 700;
+        line-height: 1.55;
+        text-align: left;
+      }
+
+      .legal-inline-notice a {
+        color: var(--coral-dark);
+        font-weight: 900;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
       .site-footer {
         border-top: 1px solid var(--line);
         background:
@@ -1469,6 +1485,7 @@
             <span class="eyebrow">Mein Bücherregal</span>
             <h2 id="books-title">Alle Bücher auf einen Blick</h2>
             <p>Übersichtlich nach Geschichten, Kinder-Malbüchern und kreativen Auszeiten für Große sortiert.</p>
+            <p class="legal-inline-notice">Einige Buchlinks führen zu Amazon. Für Preis, Verfügbarkeit, Bestellung und Vertragsabwicklung gelten die Angaben des dort genannten Verkäufers. <a href="seiten/haftung-downloads.html#externe-links">Mehr zu externen Links</a></p>
           </div>
 
           <div class="book-group">
@@ -1717,8 +1734,9 @@
           <h3>Rechtliches</h3>
           <a href="mailto:zauberaufpapier@gmail.com">zauberaufpapier@gmail.com</a>
           <a href="seiten/ueber-mich.html">Über mich</a>
-          <a href="https://versteckmich.de/zauberaufpapier/impressum" data-popup-link>Impressum</a>
-          <a href="https://versteckmich.de/zauberaufpapier/datenschutz" data-popup-link>Datenschutz</a>
+          <a href="seiten/impressum.html">Impressum</a>
+          <a href="seiten/datenschutz.html">Datenschutz</a>
+          <a href="seiten/haftung-downloads.html">Haftung &amp; Downloads</a>
         </div>
       </div>
       <div class="footer-bottom">
